@@ -132,6 +132,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+/*imgModal
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.createElement("div");
+  modal.id = "imgModal";
+  modal.style.cssText = `
+    display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.8);justify-content:center;align-items:center
+  `;
+  modal.innerHTML = `<img id="modalImage" style="max-width:90%; max-height:90%; border-radius:8px;"><span style="position:absolute;top:20px;right:30px;font-size:30px;color:white;cursor:pointer" id="modalClose">&times;</span>`;
+  document.body.appendChild(modal);
+
+  document.querySelectorAll(".clickable-img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => {
+      document.getElementById("modalImage").src = img.src;
+      modal.style.display = "flex";
+    });
+  });
+
+  document.getElementById("modalClose").addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}); 
+*/
+
 
 
 
