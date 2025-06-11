@@ -23,83 +23,83 @@
 
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+    
 
-<style>
-  .zoom-effect {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+   <style>
+      .zoom-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-  .zoom-effect:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-</style>
+      .zoom-effect:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+   </style>
 
-
-<!--   
-    <style>
-  .zoom-effect {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .zoom-effect:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-</style> 
- -->
 
 </head> 
 
-<body class="docs-page">    
-    <header class="header fixed-top">	    
-        <div class="branding docs-branding">
-            <div class="container-fluid position-relative py-2">
-                <div class="docs-logo-wrapper">
-					<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
-	                    <span></span>
-	                    <span></span>
-	                    <span></span>
-	                </button>
-	                <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Coder<span class="text-alt">Docs</span></span></a></div>    
-                </div><!--//docs-logo-wrapper-->
-	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-	                <div class="top-search-box d-none d-lg-flex">
-		                <form class="search-form">
-				            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
-				            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-				        </form>
-	                </div>
-	
-					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-						<li class="list-inline-item"><a href="https://wa.me/966566240665"><i class="fa-brands fa-whatsapp"></i></a></li>
-			            <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCNfxY0P_RuxuuKAo842kpbw"><i class="fa-brands fa-youtube"></i></a></li>
-		                <li class="list-inline-item"><a href="https://www.linkedin.com/company/smart-prints/"><i class="fa-brands fa-linkedin"></i></a></li>
-		                <li class="list-inline-item"><a href="https://www.instagram.com/smartprintsksa/"><i class="fa-brands fa-instagram"></i></a></li>
-		                <li class="list-inline-item"><a href="#" id="lang-toggle"><i class="fa-solid fa-globe fa-fw"></i></a></li>
-                    </ul><!--//social-list-->
-		            <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderdocs-free-bootstrap-5-documentation-template-for-software-projects/" class="btn btn-primary d-none d-lg-flex">Download</a>
-	            </div><!--//docs-top-utilities-->
-            </div><!--//container-->
-        </div><!--//branding-->
-    </header><!--//header-->
+<body>    
+    <header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid py-2">
+      <div class="row align-items-center">
+        <!-- Logo Left -->
+        <div class="col-4 col-md-3 col-lg-2 d-flex align-items-center">
+          <a class="navbar-brand" href="index.html">
+            <img class="logo-icon me-2" src="assets/images/sticky_logo.png" alt="logo" style="height: 60px;">
+            <span class="logo-text"><span class="text-alt">Documentation</span> v1.0</span>
+          </a>
+        </div>
+
+        <!-- Search Center -->
+<div class="col-4 col-md-6 col-lg-8 d-none d-lg-block">
+  <form class="search-form position-relative d-flex justify-content-center">
+    <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input w-75 pe-5">
     
+  </form>
+</div>
+
+        <!-- Button Right -->
+        <div class="col-8 col-md-3 col-lg-2 d-flex justify-content-end align-items-center">
+          
+          <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderdocs-free-bootstrap-5-documentation-template-for-software-projects/" class="btn btn-primary d-none d-lg-flex">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header> 
     
     <div class="docs-wrapper">
+        <!-- Social Media Sidebar -->
+        <div class="social-sidebar d-none d-lg-flex">
+          <ul class="social-sidebar">
+         <li onclick="activateIcon(this)"><a href="https://wa.me/966566240665" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="https://www.youtube.com/channel/UCNfxY0P_RuxuuKAo842kpbw" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="https://www.linkedin.com/company/smart-prints/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="https://www.instagram.com/smartprintsksa/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="#" id="lang-toggle" onclick="window.location.href='arabic.html';"><i class="fa-solid fa-globe fa-fw"></i></a></li>
+        </ul>
+        </div>
+
+      <div class="top-search-box-wrapper position-relative d-lg-none p-3">
+  <div class="top-search-box">
+    <form class="search-form position-relative">
+      <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input pe-5">
+      
+    </form>
+  </div>
+</div>
+
+
 	    <div id="docs-sidebar" class="docs-sidebar">
-		    <div class="top-search-box d-lg-none p-3">
-                <form class="search-form">
-		            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
-		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-		        </form>
-            </div>
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3">
-<li class="nav-item section-title">
-        <a class="nav-link scrollto active" href="#section-1">
-            <span class="theme-icon-holder me-2"><i class="fas fa-cash-register"></i></span>Getting Started
-        </a>
-    </li>
+            <li class="nav-item section-title">
+             <a class="nav-link scrollto active" href="#section-1">
+             <span class="theme-icon-holder me-2"><i class="fas fa-cash-register"></i></span>Getting Started
+             </a>
+            </li>
     <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">All-In-One Restaurant Solutions</a></li>
 
     <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder me-2"><i class="fas fa-concierge-bell"></i></span>System Access</a></li>
@@ -133,8 +133,9 @@
     <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-8"><span class="theme-icon-holder me-2"><i class="fas fa-question-circle"></i></span>FAQs</a></li>
 </ul>
 
-</nav><!--//docs-nav-->
-	    </div><!--//docs-sidebar-->
+  </nav><!--//docs-nav-->
+   </div><!--//docs-sidebar-->
+      
 	    <div class="docs-content">
   <div class="container">
 
@@ -234,7 +235,7 @@
     <p>Within the POS system, there are two key subsections (Employee and Shift) that play pivotal roles in managing operations. These subsections enhance the functionality of the POS system, providing detailed insights into employee management and transactional shifts.</p>
     <div class="text-center my-4">
       <img src="assets/images/add-employee.png" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-emp-1" alt="Employee Image 1">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      
     </div>
 
     <p>The Employee Management section lets you easily track employee information, including roles, schedules, and performance metrics, ensuring efficient workforce management.</p>
@@ -258,7 +259,7 @@
 </ul>
     <div class="text-center my-4">
       <img src="assets/images/added-employee.png" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-emp-2" alt="Employee Image 2">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+ 
     </div>
 
     <h2>Shift Management</h2>
@@ -274,10 +275,6 @@
 <li>Expected Amount: The anticipated amount or balance for the shift.</li>
 <li>Closed At: The time at which the shift ends.</li>
   </ul>
-    <div class="text-center my-4">
-      <img src="assets/images/shift.png" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-emp-3" alt="Employee Image 3">
-      <div class="small text-muted mt-2">Click to enlarge</div>
-    </div>
   </section>
 </article>
 
@@ -293,13 +290,13 @@
     <p>To add a payment method, click on the blue section above ‘add payment method’, then fill in the name of the payment method, and select its type, either a debit card or cash, as follow:</p>
     <div class="text-center my-4">
       <img src="assets/images/payment.png" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-pay-1" alt="Payment Image 1">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      
     </div>
 
     <p>The added payment method will appear as follows:</p>
     <div class="text-center my-4">
       <img src="assets/images/add-payment.png" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-pay-2" alt="Payment Image 2">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+  
     </div>
 
     
@@ -326,15 +323,15 @@
 </ul>
 
       <div class="text-center my-4">
-      <img src="assets/images/create-menu.png" alt="Menu 1" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      <img src="assets/images/create-menu.png" alt="create-menu" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+     
     </div>
 
     <h3>Categories</h3>
     <p>To add a category, first click on 'menu' and then 'categories'. After click on 'Add category,' and this window will pop up, empty. Make sure to fill up the parameters explained below:</p>
     <div class="text-center my-4">
-      <img src="assets/images/add-category.png" alt="Menu 1" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      <img src="assets/images/add-category.png" alt="category" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+      
     </div>
     
     <ul class="ms-3">
@@ -345,8 +342,8 @@
   <li>The created category should look like this:</li>
 </ul>
     <div class="text-center my-4">
-      <img src="assets/images/added-category.png" alt="Menu 2" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      <img src="assets/images/added-category.png" alt="added-category" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+   
     </div>
    
     <h3>Products</h3>
@@ -354,8 +351,8 @@
     <p>Products are the various items and goods available for selection or purchase. Each product has distinct characteristics that you can customize using the option feature, For instance, if you're ordering a burger, the burger is the "Product,” and within this product, you can then select various options like the type of bread, the size, or any additional toppings.</p>
     <p>To add a new product, click on “Add product,” and this window will pop up. Follow the fill-in process illustrated in the image below:</p>
     <div class="text-center my-4">
-      <img src="assets/images/add-product.png" alt="Menu 3" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      <img src="assets/images/add-product.png" alt="product" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+     
     </div>
     
 <ul>
@@ -379,14 +376,68 @@
 </ul>
 
     <div class="text-center my-4">
-      <img src="assets/images/added-product.png" alt="Menu 4" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      <img src="assets/images/added-product.png" alt="added-product" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+      
     </div>
   </section>
+
       <section class="docs-section" id="item-5-2">
         <h2 class="section-heading">Family Options & Options</h2>
-        <p>[Content goes here]</p>
-      </section>
+        <p>Similarly to the logic used in  “Categories” and “Products”, this section refers to the overall set to which a specific option belongs. For example, "size" is the family option that includes different sizes like small, medium, large, and extra-large; it represents the broader set of choices within a particular product option.</p>
+        <p>We can break it down as follows:
+      
+          <ul class="ms-3">
+           <li><strong>Family Option:</strong> size (encompassing small S, medium M, large L, and extra large XL)</li>
+           <li><strong>Option:</strong> (e.g., XL)</li></p>
+          </ul>
+          <p>To view the family option's section, click on ‘Family Option’, then click on ‘Add family option', the following window appears:</p>
+      
+         <div class="text-center my-4">
+      <img src="assets/images/add-family.png" alt="familly-option" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+     
+    </div>
+    
+<ul>
+  <li><strong>Name:</strong>Inter your desired family option’s name.</li>
+  <li><strong>Name (Arabic):</strong> Write the family option's name in Arabic, if applicable.</li>
+  <li><strong>Type:</strong> Either it is a one selection or a multi-selection family option.</li>
+  <li><strong>Status:</strong>Indicate the current status of the family option, whether enabled (available) or disabled (not available).</li>
+  <li><strong>Description:</strong> Provide a comprehensive description of the family option if needed.</li>
+  <li><strong>Image:</strong> Upload an image of the family option for a clear visual representation.</li>
+  <li><strong>Description (Arabic):</strong>  Include the family option’s description in Arabic, if applicable.</li>
+  <li>The final added family option will look as follows:</li>
+</ul>
+
+    <div class="text-center my-4">
+      <img src="assets/images/added-family.png" alt="added-familly-option" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+      
+    </div>
+
+     <p>Represents the different set of choices a product could have, for example, the product coffee can come in different sizes as , small “S“, medium “M“, large “L“, and even extra-large “XL“. All these are considered as the coffee’s options.</p>
+     <p>Click on “Add Option“, and fill in the window as follows:</p>      
+         <div class="text-center my-4">
+      <img src="assets/images/add-option.png" alt="familly-option" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+     
+    </div>
+    
+<ul>
+  <li><strong>Name:</strong>Inter your desired option’s name.</li>
+  <li><strong>Name (Arabic):</strong> Write the option's name in Arabic, if applicable.</li>
+  <li><strong>Family:</strong> Choose the family option under which your option falls.</li>
+  <li><strong>Price:</strong>Specify the price you want for your option.</li>
+  <li><strong>Description:</strong> Provide a comprehensive description of the option if needed.</li>
+  <li><strong>Status:</strong>Indicate the current status of the option, whether enabled (available) or disabled (not available).</li>
+  <li><strong>Image:</strong> Upload an image of the option for a clear visual representation.</li>
+  <li><strong>Description (Arabic):</strong>  Include the option’s description in Arabic, if applicable.</li>
+  <li>The final added option will look as follows:</li>
+</ul>
+
+    <div class="text-center my-4">
+      <img src="assets/images/added-option.png" alt="added-familly-option" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+      
+    </div>
+    </section>
+
       <section class="docs-section" id="item-5-3">
         <h2 class="section-heading">Groups & Offers</h2>
         <p>[Content goes here]</p>
@@ -404,25 +455,25 @@
   </header>
   <section class="docs-section" id="item-6-1">
     <h2 class="section-heading">Install the PoS App</h2>
-    <p>[Paragraph 1]</p>
+    <p>Install the POS app on the device(s) you’ll be using in your store. Whether it's a tablet, PC, or POS terminal, download the app, log in with your credentials, and your POS system is ready to go.</p>
     <div class="text-center my-4">
-      <img src="assets/images/install-1.png" alt="Install 1" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      <img src="assets/images/installation.png" alt="Install 1" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+      
     </div>
     <p>[Paragraph 2]</p>
     <div class="text-center my-4">
       <img src="assets/images/install-2.png" alt="Install 2" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+     
     </div>
     <p>[Paragraph 3]</p>
     <div class="text-center my-4">
       <img src="assets/images/install-3.png" alt="Install 3" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+     
     </div>
     <p>[Paragraph 4]</p>
     <div class="text-center my-4">
       <img src="assets/images/install-4.png" alt="Install 4" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
-      <div class="small text-muted mt-2">Click to enlarge</div>
+      
     </div>
   </section>
 </article>
@@ -434,15 +485,20 @@
       </header>
       <section class="docs-section" id="item-7-1">
         <h2 class="section-heading">Reporting Features</h2>
-        <p>[Content goes here]</p>
+        <p>Once your system is operational, you can access advanced reporting tools to monitor sales, track inventory, and evaluate employee performance. The system provides real-time data that helps you make informed decisions to grow your business.</p>
+       <div class="text-center my-4">
+      <img src="assets/images/reporting-features.png" alt="reporting-features" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;">
+    </div>
       </section>
+
       <section class="docs-section" id="item-7-2">
         <h2 class="section-heading">Create Store / Device</h2>
-        <p>[Content goes here]</p>
+        <p>If you’re expanding or need additional devices, the POS system allows you to add new stores or devices to your existing account. Simply go to the ‘Stores & Devices’ section and follow the steps to register a new location or device.</p>
       </section>
+
       <section class="docs-section" id="item-7-3">
         <h2 class="section-heading">Technical Support</h2>
-        <p>[Content goes here]</p>
+        <p>If you encounter any issues or have questions, our technical support is available. Reach out via email or chat, and our team will assist you in resolving any technical problems.</p>
       </section>
     </article>
 
@@ -452,13 +508,12 @@
         <h1 class="docs-heading">FAQs</h1>
       </header>
       <section class="docs-section">
-        <h2 class="section-heading">Frequently Asked Questions</h2>
         <ul>
-          <li><strong>Can I use the restaurant solutions offline?</strong><br>No. All modules are cloud-connected to ensure real-time sync, updates, and backups.</li>
-          <li><strong>Are all services included by default?</strong><br>Your account may include specific modules depending on your subscription package. Contact your provider to activate additional services.</li>
-          <li><strong>Can I manage multiple branches?</strong><br>Yes, our platform supports multi-branch management for items, inventory, orders, and staff.</li>
-          <li><strong>How do I switch the language?</strong><br>Click the language icon at the top. All apps and this documentation support Arabic and English.</li>
-          <li><strong>Where can I get help?</strong><br>For assistance, reach out to your onboarding representative or the البصمات الذكية (Smart Prints) support team through your assigned communication channel.</li>
+          <li>Can I use the restaurant solutions offline?<br>No. All modules are cloud-connected to ensure real-time sync, updates, and backups.</li>
+          <li>Are all services included by default?<br>Your account may include specific modules depending on your subscription package. Contact your provider to activate additional services.</li>
+          <li>Can I manage multiple branches?<br>Yes, our platform supports multi-branch management for items, inventory, orders, and staff.</li>
+          <li>How do I switch the language?<br>Click the language icon at the top. All apps and this documentation support Arabic and English.</li>
+          <li>Where can I get help?<br>For assistance, reach out to your onboarding representative or the البصمات الذكية (Smart Prints) support team through your assigned communication channel.</li>
         </ul>
       </section>
     </article>
@@ -467,21 +522,26 @@
 </div><!--//docs-content-->
 
 
-       
-    <!-- Javascript -->          
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-    
-    
-    <!-- Page Specific JS -->
-    <script src="assets/plugins/smoothscroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-    <script src="assets/js/highlight-custom.js"></script> 
-    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
-    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
-    <script src="assets/js/docs.js"></script> 
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all images with zoom-effect class
+    const zoomImages = document.querySelectorAll('.zoom-effect');
 
-    <!-- imgModel -->
+    zoomImages.forEach(function (img) {
+      img.addEventListener('click', function () {
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = this.src;
+
+        // Show the modal using Bootstrap's method
+        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        imageModal.show();
+      });
+    });
+  });
+</script>
+
+   
+    <!-- Image Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content bg-transparent border-0">
@@ -493,6 +553,133 @@
   </div>
 </div>
 
+<!-- Smart Search Script -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.querySelector('.search-input');
+  const navLinks = Array.from(document.querySelectorAll('#docs-sidebar .nav-link'));
+  const suggestionsBox = document.createElement('div');
+  suggestionsBox.className = 'autocomplete-suggestions';
+  input.parentNode.appendChild(suggestionsBox);
+
+  input.addEventListener('input', function () {
+    const val = this.value.trim().toLowerCase();
+    suggestionsBox.innerHTML = '';
+
+    if (!val) {
+      suggestionsBox.style.display = 'none';
+      return;
+    }
+
+    // Filter and highlight results
+    navLinks.forEach(link => {
+      const text = link.textContent.trim();
+      const lowerText = text.toLowerCase();
+
+      if (lowerText.includes(val)) {
+        const option = document.createElement('div');
+        option.className = 'autocomplete-suggestion';
+
+        // Highlight match
+        const highlighted = text.replace(
+          new RegExp(`(${val})`, 'gi'),
+          `<mark>$1</mark>`
+        );
+
+        option.innerHTML = highlighted;
+        option.addEventListener('click', () => {
+          window.location.href = link.href;
+        });
+        suggestionsBox.appendChild(option);
+      }
+    });
+
+    suggestionsBox.style.display = suggestionsBox.children.length ? 'block' : 'none';
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!suggestionsBox.contains(e.target) && e.target !== input) {
+      suggestionsBox.innerHTML = '';
+      suggestionsBox.style.display = 'none';
+    }
+  });
+});
+
+</script>
+
+<!-- Smart Search Styles -->
+<style>
+/* Search dropdown styles - only visible while typing */
+.autocomplete-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 1050;
+  max-height: 240px;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  display: none; /* hidden by default */
+  padding: 4px 0;
+}
+
+/* Style individual suggestions */
+.autocomplete-suggestion {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect */
+.autocomplete-suggestion:hover {
+  background-color: #f0f4ff;
+}
+
+/* Highlight matched part */
+.autocomplete-suggestion mark {
+  background: none;
+  color: #5368fd;
+  font-weight: bold;
+}
+
+</style>
+
+ <footer class="footer">
+
+	    <div class="footer-bottom text-center py-5">
+		    
+		    <ul class="social-list list-unstyled pb-4 mb-0">
+			    <li class="list-inline-item"><a href="https://wa.me/966566240665"><i class="fa-brands fa-whatsapp fa-fw"></i></a></li> 
+	            <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCNfxY0P_RuxuuKAo842kpbw"><i class="fa-brands fa-youtube fa-fw"></i></a></li>
+	            <li class="list-inline-item"><a href="https://www.linkedin.com/company/smart-prints/"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
+	            <li class="list-inline-item"><a href="https://www.instagram.com/smartprintsksa/"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
+	        </ul><!--//social-list-->
+	        
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">© Copyright 2025 <a class="theme-link" href="https://smartprints-ksa.com/" target="_blank">Smart Prints</a> All Rights Reserved. Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a>.</small>
+            
+	        
+	    </div>
+	    
+    </footer>
+
+
+     <!-- Javascript -->          
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    
+    
+    <!-- Page Specific JS -->
+    <script src="assets/plugins/smoothscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="assets/js/highlight-custom.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/js/docs.js"></script> 
 
 
 </body>

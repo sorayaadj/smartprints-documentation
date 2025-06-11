@@ -12617,4 +12617,70 @@ a.text-link:hover {
   }
 }
 
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: transparent;
+  z-index: 1050;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* floating social sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.social-sidebar li {
+  font-size: 1.125rem;
+  background: rgb(234, 237, 254); /* Soft gray/purple background */
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 6px;
+  list-style: none;
+  margin-bottom: 12px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-sidebar li a {
+  color: rgb(133, 148, 253); /* Original blue/purple icon */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 28px;
+  font-size: 18px;
+}
+
+/* Hover effect (same as before) */
+.social-sidebar li a:hover {
+  color: #5368fd;
+}
+
+/* Active/clicked icon background and icon color */
+.social-sidebar li.active {
+  background-color: #5368fd !important; /* Bright blue when clicked */
+}
+
+.social-sidebar li.active a {
+  color: #ffffff !important; /* White icon when active */
+}
+
+
 /*# sourceMappingURL=theme.css.map */

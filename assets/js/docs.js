@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
 /*imgModal
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.createElement("div");
