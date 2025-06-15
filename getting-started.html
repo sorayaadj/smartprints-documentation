@@ -23,7 +23,8 @@
 
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    
+
+
 
    <style>
       .zoom-effect {
@@ -36,6 +37,7 @@
       }
    </style>
 
+   <script src="https://kit.fontawesome.com/7336bd56cb.js" crossorigin="anonymous"></script>
 
 </head> 
 
@@ -47,18 +49,24 @@
         <!-- Logo Left -->
         <div class="col-4 col-md-3 col-lg-2 d-flex align-items-center">
           <a class="navbar-brand" href="index.html">
-            <img class="logo-icon me-2" src="assets/images/sticky_logo.png" alt="logo" style="height: 60px;">
-            <span class="logo-text"><span class="text-alt">Documentation</span> v1.0</span>
+            <img class="logo-icon me-2" src="assets/images/smart-prints-logo.png" alt="logo" style="height: 60px;">
           </a>
         </div>
 
         <!-- Search Center -->
+         
 <div class="col-4 col-md-6 col-lg-8 d-none d-lg-block">
   <form class="search-form position-relative d-flex justify-content-center">
-    <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input w-75 pe-5">
-    
+    <div class="position-relative w-75 autocomplete-container">
+      <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input pe-5">
+      <div class="autocomplete-suggestions"></div>
+      <button type="submit" class="btn position-absolute top-50 end-0 translate-middle-y me-2 p-0 border-0 bg-transparent">
+        <i class="fa-light fa-magnifying-glass text-muted"></i>
+      </button>
+    </div>
   </form>
 </div>
+
 
         <!-- Button Right -->
         <div class="col-8 col-md-3 col-lg-2 d-flex justify-content-end align-items-center">
@@ -82,15 +90,17 @@
         </ul>
         </div>
 
-      <div class="top-search-box-wrapper position-relative d-lg-none p-3">
+  <div class="top-search-box-wrapper position-relative d-lg-none p-3">
   <div class="top-search-box">
-    <form class="search-form position-relative">
-      <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input pe-5">
-      
+    <form class="search-form">
+      <div class="position-relative w-100 autocomplete-container">
+       <input type="text" class="form-control search-input rounded-top" placeholder="Search the docs...">
+       
+       <div class="autocomplete-suggestions"></div>
+     </div>
     </form>
   </div>
 </div>
-
 
 	    <div id="docs-sidebar" class="docs-sidebar">
 		    <nav id="docs-nav" class="docs-nav navbar">
@@ -553,15 +563,20 @@
   </div>
 </div>
 
-<!-- Smart Search Script -->
-
 <script>
+
+// === Smart Search Autocomplete ===
 document.addEventListener('DOMContentLoaded', function () {
   const input = document.querySelector('.search-input');
   const navLinks = Array.from(document.querySelectorAll('#docs-sidebar .nav-link'));
+
+  if (!input) return;
+
+  // Find the container (autocomplete-container) and append inside it
+  const container = input.closest('.autocomplete-container');
   const suggestionsBox = document.createElement('div');
   suggestionsBox.className = 'autocomplete-suggestions';
-  input.parentNode.appendChild(suggestionsBox);
+  container.appendChild(suggestionsBox);
 
   input.addEventListener('input', function () {
     const val = this.value.trim().toLowerCase();
@@ -572,7 +587,6 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // Filter and highlight results
     navLinks.forEach(link => {
       const text = link.textContent.trim();
       const lowerText = text.toLowerCase();
@@ -581,16 +595,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const option = document.createElement('div');
         option.className = 'autocomplete-suggestion';
 
-        // Highlight match
-        const highlighted = text.replace(
-          new RegExp(`(${val})`, 'gi'),
-          `<mark>$1</mark>`
-        );
+        const index = lowerText.indexOf(val);
+          const highlighted = 
+           index !== -1
+           ? text.substring(0, index) + 
+           `<mark class="bg-transparent text-primary fw-bold">` +
+            text.substring(index, index + val.length) +
+            '</mark>' +
+            text.substring(index + val.length)
+            : text;
 
         option.innerHTML = highlighted;
         option.addEventListener('click', () => {
           window.location.href = link.href;
         });
+
         suggestionsBox.appendChild(option);
       }
     });
@@ -606,32 +625,42 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
 </script>
 
-<!-- Smart Search Styles -->
 <style>
-/* Search dropdown styles - only visible while typing */
+
+/* Container must stay relative */
+.autocomplete-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Suggestions dropdown */
 .autocomplete-suggestions {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
+  left: 2px;
+  right: 2px;
   background: #fff;
   z-index: 1050;
   max-height: 240px;
   overflow-y: auto;
-  border-radius: 4px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-  display: none; /* hidden by default */
-  padding: 4px 0;
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 6px 6px; /* Only bottom corners rounded */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: none;
+  padding: 0;
 }
 
-/* Style individual suggestions */
+/* Suggestion item */
 .autocomplete-suggestion {
   padding: 10px 14px;
   cursor: pointer;
   color: #333;
   transition: background-color 0.2s ease;
+  font-size: 0.95rem;
 }
 
 /* Hover effect */
@@ -639,14 +668,17 @@ document.addEventListener('DOMContentLoaded', function () {
   background-color: #f0f4ff;
 }
 
-/* Highlight matched part */
+/* Highlighted match */
 .autocomplete-suggestion mark {
   background: none;
   color: #5368fd;
   font-weight: bold;
 }
 
+
 </style>
+
+
 
  <footer class="footer">
 

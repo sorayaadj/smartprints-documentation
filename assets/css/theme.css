@@ -12668,19 +12668,5 @@ a.text-link:hover {
   font-size: 18px;
 }
 
-/* Hover effect (same as before) */
-.social-sidebar li a:hover {
-  color: #5368fd;
-}
-
-/* Active/clicked icon background and icon color */
-.social-sidebar li.active {
-  background-color: #5368fd !important; /* Bright blue when clicked */
-}
-
-.social-sidebar li.active a {
-  color: #ffffff !important; /* White icon when active */
-}
-
 
 /*# sourceMappingURL=theme.css.map */
