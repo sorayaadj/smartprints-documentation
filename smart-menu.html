@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>SmartPrints -smart-menu-solution</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="Bootstrap Documentation Template For Software Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+
+
+   <style>
+      .zoom-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .zoom-effect:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+   </style>
+
+   <script src="https://kit.fontawesome.com/7336bd56cb.js" crossorigin="anonymous"></script>
+
+</head> 
+
+<body>    
+    <header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid py-2">
+      <div class="row align-items-center">
+        <!-- Logo Left -->
+        <div class="col-4 col-md-3 col-lg-2 d-flex align-items-center">
+          <a class="navbar-brand" href="index.html">
+	          <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="assets/images/sticky_logo.png" alt="logo" style="height: 60px;"></a></div>  
+          </a>
+        </div>
+
+        <!-- Search Center -->
+         
+<div class="col-4 col-md-6 col-lg-8 d-none d-lg-block">
+  <form class="search-form position-relative d-flex justify-content-center">
+    <div class="position-relative w-75 autocomplete-container">
+      <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input pe-5">
+      <div class="autocomplete-suggestions"></div>
+      <button type="submit" class="btn position-absolute top-50 end-0 translate-middle-y me-2 p-0 border-0 bg-transparent">
+        <i class="fa-light fa-magnifying-glass text-muted"></i>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+        <!-- Button Right -->
+        <div class="col-8 col-md-3 col-lg-2 d-flex justify-content-end align-items-center">
+          
+          <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderdocs-free-bootstrap-5-documentation-template-for-software-projects/" class="btn btn-primary d-none d-lg-flex">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header> 
+    
+    <div class="docs-wrapper">
+        <!-- Social Media Sidebar -->
+        <div class="social-sidebar d-none d-lg-flex">
+          <ul class="social-sidebar">
+         <li onclick="activateIcon(this)"><a href="https://wa.me/966566240665" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="https://www.youtube.com/channel/UCNfxY0P_RuxuuKAo842kpbw" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="https://www.linkedin.com/company/smart-prints/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="https://www.instagram.com/smartprintsksa/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+         <li onclick="activateIcon(this)"><a href="#" id="lang-toggle" onclick="window.location.href='arabic.html';"><i class="fa-solid fa-globe fa-fw"></i></a></li>
+        </ul>
+        </div>
+
+  <div class="top-search-box-wrapper position-relative d-lg-none p-3">
+  <div class="top-search-box">
+    <form class="search-form">
+      <div class="position-relative w-100 autocomplete-container">
+       <input type="text" class="form-control search-input rounded-top" placeholder="Search the docs...">
+       <div class="autocomplete-suggestions"></div>
+     </div>
+    </form>
+  </div>
+</div>
+
+      <div id="docs-sidebar" class="docs-sidebar">
+  <nav id="docs-nav" class="docs-nav navbar">
+    <ul class="section-items list-unstyled nav flex-column pb-3">
+
+      <!-- Sidebar Navigation -->
+<div id="docs-sidebar" class="docs-sidebar">
+  <nav id="docs-nav" class="docs-nav navbar">
+    <ul class="section-items list-unstyled nav flex-column pb-3">
+
+      <li class="nav-item section-title">
+        <a class="nav-link scrollto active" href="#section-1">
+          <span class="theme-icon-holder me-2"><i class="fas fa-utensils"></i></span>Smart Menu
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Introduction</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Key Benefits</a></li>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link scrollto" href="#section-2">
+          <span class="theme-icon-holder me-2"><i class="fas fa-layer-group"></i></span>Components
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Web Mobile Application</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">Back-Office Management</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">Kitchen Application</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-2-4">Smart Automation Integration</a></li>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link scrollto" href="#section-3">
+          <span class="theme-icon-holder me-2"><i class="fas fa-star"></i></span>Core Features
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Ordering Methods</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-3-2">Multi-Language Support</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">Payment Integration</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-3-4">Menu Customization</a></li>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link scrollto" href="#section-4">
+          <span class="theme-icon-holder me-2"><i class="fas fa-store"></i></span>Use Cases
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Dine-In</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">Pickup</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-4-3">Delivery</a></li>
+
+    </ul>
+ 
+</nav><!--//docs-nav-->
+</div><!--//docs-sidebar-->
+
+<!-- Main Content -->
+<div class="docs-content">
+  <div class="container">
+
+    <!-- Section 1: Smart Menu -->
+    <article class="docs-article" id="section-1">
+      <header class="docs-header">
+        <h1 class="docs-heading">Smart Menu</h1>
+      </header>
+
+      <section class="docs-section" id="item-1-1">
+        <h2 class="section-heading">Introduction</h2>
+        <p>The Smart Menu is an innovative online ordering solution designed to streamline and automate the ordering process for restaurants. Whether customers are dining in, picking up, or opting for delivery, the Smart Menu allows them to order and pay on their own, enhancing convenience and efficiency.</p>
+        <div class="text-center my-4">
+          <img src="assets/images/smart-menu-intro.png" alt="smart menu" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal1">
+        </div>
+      </section>
+
+      <section class="docs-section" id="item-1-2">
+        <h2 class="section-heading">Key Benefits</h2>
+        <ul>
+          <li>Contactless, secure, and fast ordering process</li>
+          <li>Reduces wait times and staff dependency</li>
+          <li>Available 24/7 via mobile device</li>
+          <li>Supports seamless dine-in, pickup, and delivery modes</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Section 2: Components -->
+    <article class="docs-article" id="section-2">
+      <header class="docs-header">
+        <h1 class="docs-heading">Components</h1>
+      </header>
+
+      <section class="docs-section" id="item-2-1">
+        <h2 class="section-heading">Web Mobile Application</h2>
+        <p>Customers can easily browse the restaurant’s menu, place their orders, and make payments directly from any mobile device. This user-friendly interface ensures a seamless ordering experience whether they’re dining in or on the go.</p>
+        <div class="text-center my-4"><img src="assets/images/web-mobile-app.png" alt="Web Mobile App" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;"></div>
+      </section>
+
+      <section class="docs-section" id="item-2-2">
+        <h2 class="section-heading">Back-Office Management</h2>
+        <p>Restaurant administrators can customize menus, manage products, and update prices in real time through a web-based dashboard. This application allows efficient control and smooth operations management.</p>
+        <div class="text-center my-4"><img src="assets/images/backoffice.png" alt="Back Office" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;"></div>
+      </section>
+
+      <section class="docs-section" id="item-2-3">
+        <h2 class="section-heading">Kitchen Application</h2>
+        <p>This system ensures orders go directly from the customer to the kitchen, displayed in real-time. It eliminates communication gaps and accelerates food preparation while improving order accuracy.</p>
+        <div class="text-center my-4"><img src="assets/images/kitchen-app.png" alt="Kitchen App" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;"></div>
+      </section>
+
+      <section class="docs-section" id="item-2-4">
+        <h2 class="section-heading">Smart Automation Integration</h2>
+        <p>The Smart Menu integrates with the POS system, ensuring synchronized order processing, inventory tracking, and financial reporting. This automation reduces human error and improves service speed.</p>
+        <div class="text-center my-4"><img src="assets/images/automation.png" alt="Automation" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 500px; width: 100%; cursor: pointer;"></div>
+      </section>
+    </article>
+
+    <!-- Section 3: Core Features -->
+    <article class="docs-article" id="section-3">
+      <header class="docs-header">
+        <h1 class="docs-heading">Core Features</h1>
+      </header>
+
+      <section class="docs-section" id="item-3-1">
+        <h2 class="section-heading">Ordering Methods</h2>
+        <ul>
+          <li>Dine-in via table QR</li>
+          <li>Pickup at counter</li>
+          <li>Home delivery with location tracking</li>
+        </ul>
+      </section>
+
+      <section class="docs-section" id="item-3-2">
+        <h2 class="section-heading">Multi-Language Support</h2>
+        <p>The Smart Menu interface supports both Arabic and English, ensuring accessibility and ease of use for diverse customer bases.</p>
+      </section>
+
+      <section class="docs-section" id="item-3-3">
+        <h2 class="section-heading">Payment Integration</h2>
+        <ul>
+          <li>Credit/Debit cards</li>
+          <li>Apple Pay / Samsung Pay</li>
+          <li>Cash on delivery (if allowed)</li>
+        </ul>
+      </section>
+
+      <section class="docs-section" id="item-3-4">
+        <h2 class="section-heading">Menu Customization</h2>
+        <p>Admins can create multiple menu layouts, set product modifiers, create combo meals, or promote limited-time offers directly through the dashboard.</p>
+      </section>
+    </article>
+
+    <!-- Section 4: Use Cases -->
+    <article class="docs-article" id="section-4">
+      <header class="docs-header">
+        <h1 class="docs-heading">Use Cases</h1>
+      </header>
+
+      <section class="docs-section" id="item-4-1">
+        <h2 class="section-heading">Dine-In</h2>
+        <p>Customers scan a table QR code to access the menu, place an order, and pay without leaving their seat.</p>
+      </section>
+
+      <section class="docs-section" id="item-4-2">
+        <h2 class="section-heading">Pickup</h2>
+        <p>Users order in advance via the Smart Menu and pick up their meals when ready—no queues, no delays.</p>
+      </section>
+
+      <section class="docs-section" id="item-4-3">
+        <h2 class="section-heading">Delivery</h2>
+        <p>Customers order from anywhere and get food delivered to their location, with integrated driver coordination and address management.</p>
+      </section>
+    </article>
+
+  </div><!--//container-->
+</div><!--//docs-content-->
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all images with zoom-effect class
+    const zoomImages = document.querySelectorAll('.zoom-effect');
+
+    zoomImages.forEach(function (img) {
+      img.addEventListener('click', function () {
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = this.src;
+
+        // Show the modal using Bootstrap's method
+        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        imageModal.show();
+      });
+    });
+  });
+</script>
+
+   
+    <!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 text-center">
+        <img id="modalImage" src="#" alt="Zoomed" class="img-fluid rounded">
+      </div>
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+// === Smart Search Autocomplete ===
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.querySelector('.search-input');
+  const navLinks = Array.from(document.querySelectorAll('#docs-sidebar .nav-link'));
+
+  if (!input) return;
+
+  // Find the container (autocomplete-container) and append inside it
+  const container = input.closest('.autocomplete-container');
+  const suggestionsBox = document.createElement('div');
+  suggestionsBox.className = 'autocomplete-suggestions';
+  container.appendChild(suggestionsBox);
+
+  input.addEventListener('input', function () {
+    const val = this.value.trim().toLowerCase();
+    suggestionsBox.innerHTML = '';
+
+    if (!val) {
+      suggestionsBox.style.display = 'none';
+      return;
+    }
+
+    navLinks.forEach(link => {
+      const text = link.textContent.trim();
+      const lowerText = text.toLowerCase();
+
+      if (lowerText.includes(val)) {
+        const option = document.createElement('div');
+        option.className = 'autocomplete-suggestion';
+
+        const index = lowerText.indexOf(val);
+          const highlighted = 
+           index !== -1
+           ? text.substring(0, index) + 
+           `<mark class="bg-transparent text-primary fw-bold">` +
+            text.substring(index, index + val.length) +
+            '</mark>' +
+            text.substring(index + val.length)
+            : text;
+
+        option.innerHTML = highlighted;
+        option.addEventListener('click', () => {
+          window.location.href = link.href;
+        });
+
+        suggestionsBox.appendChild(option);
+      }
+    });
+
+    suggestionsBox.style.display = suggestionsBox.children.length ? 'block' : 'none';
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!suggestionsBox.contains(e.target) && e.target !== input) {
+      suggestionsBox.innerHTML = '';
+      suggestionsBox.style.display = 'none';
+    }
+  });
+});
+
+
+</script>
+
+<style>
+
+/* Container must stay relative */
+.autocomplete-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Suggestions dropdown */
+.autocomplete-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 2px;
+  right: 2px;
+  background: #fff;
+  z-index: 1050;
+  max-height: 240px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 6px 6px; /* Only bottom corners rounded */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: none;
+  padding: 0;
+}
+
+/* Suggestion item */
+.autocomplete-suggestion {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+/* Hover effect */
+.autocomplete-suggestion:hover {
+  background-color: #f0f4ff;
+}
+
+/* Highlighted match */
+.autocomplete-suggestion mark {
+  background: none;
+  color: #5368fd;
+  font-weight: bold;
+}
+
+</style>
+
+
+
+    <footer class="footer">
+
+	    <div class="footer-bottom text-center py-5">
+		    
+		    <ul class="social-list list-unstyled pb-4 mb-0">
+			    <li class="list-inline-item"><a href="https://wa.me/966566240665"><i class="fa-brands fa-whatsapp fa-fw"></i></a></li> 
+	            <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCNfxY0P_RuxuuKAo842kpbw"><i class="fa-brands fa-youtube fa-fw"></i></a></li>
+	            <li class="list-inline-item"><a href="https://www.linkedin.com/company/smart-prints/"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
+	            <li class="list-inline-item"><a href="https://www.instagram.com/smartprintsksa/"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
+	        </ul><!--//social-list-->
+	        
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">© Copyright 2025 <a class="theme-link" href="https://smartprints-ksa.com/" target="_blank">Smart Prints</a> All Rights Reserved. Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a>.</small>
+            
+	        
+	    </div>
+	    
+    </footer>
+
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    
+    
+    <!-- Page Specific JS -->
+    <script src="assets/plugins/smoothscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="assets/js/highlight-custom.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/js/docs.js"></script> 
+
+</body>
+</html> 
+
