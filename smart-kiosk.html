@@ -130,7 +130,13 @@
       <li class="nav-item"><a class="nav-link scrollto" href="#item-3-4">Special Features</a></li>
       <li class="nav-item"><a class="nav-link scrollto" href="#item-3-6">Navigate the Application</a></li>
       <li class="nav-item"><a class="nav-link scrollto" href="#item-3-7">Kiosk–Cloud Integration</a></li>
-  </nav>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link scrollto" href="#section-4">
+          <span class="theme-icon-holder me-2"><i class="fas fa-code"></i></span>Conclusion
+        </a>
+      </li>
+    </nav>
 </div>
 </nav><!--//docs-nav-->
 	  </div><!--//docs-sidebar-->
@@ -160,7 +166,7 @@
     <p>Smart Kiosk reduces operational costs by allowing customers to control their own orders, minimizing staff mistakes. It guides customer behavior through suggestive selling and targeted promotions, maximizing upselling opportunities. By digitizing payment processes, it reduces cash handling discrepancies. Customers enjoy fast, intuitive ordering, leading to better satisfaction and repeat visits. With flexible packages, it’s suitable for businesses of all sizes.</p>
     
     <div class="text-center my-4">
-      <img src="assets/images/smart-kiosk.jpg" alt="Service Overview" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 380px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal1">
+      <img src="assets/images/smart-kiosk-overview.png" alt="Service Overview" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 700px; width: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal1">
     </div>
   
   </section>
@@ -275,112 +281,123 @@
     </ul>
   </section>
 
-  <section class="docs-section" id="item-3-6">
+ <section class="docs-section" id="item-3-6">
   <h2 class="section-heading">Navigate the Application</h2>
 
   <!-- Smart Kiosk Start -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
+  <div class="container my-3">
+    <div class="row align-items-center">
+      <div class="col-lg-7 col-md-12">
         <h4>Smart Kiosk Start</h4>
-        <p>The Smart Kiosk application starts with a launch screen that initializes system configurations and verifies internet/POS connectivity. This entry point ensures readiness before presenting the user interface to the customer. It is typically displayed during system boot or after a restart, especially when automatic login is enabled on the device.</p>
+        <p>The Smart Kiosk application starts with a launch screen that initializes system configurations and verifies internet/POS connectivity. This entry point ensures readiness before presenting the user interface to the customer. It is typically displayed during system boot or after a restart, especially when automatic login is enabled on the device.
+          After initialization, the customer is presented with the Category Screen where they must first choose their preferred language (Arabic or English) and order type ("Dine In" or "Take Away").
+        </p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
         <img src="assets/images/smart-kiosk-start-screen.png" alt="smart-kiosk-start-screen"
-             class="img-thumbnail shadow-sm zoom-effect"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Start Screen</div>
       </div>
     </div>
   </div>
 
   <!-- Home Screen -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
-        <h4>Home Screen</h4>
-        <p>After initialization, the customer is presented with the Home Screen where they must first choose their preferred language (Arabic or English) and order type ("Dine In" or "Take Away"). Based on this input, the kiosk routes the order accordingly. The Home Screen then displays all menu categories configured via the back-office cloud, dynamically filtered by availability and menu visibility settings.</p>
+  <div class="container my-3">
+    <div class="row align-items-center flex-row-reverse">
+      <div class="col-lg-7 col-md-12">
+        <h4>Category Screen</h4>
+        <p>Based on the previous input, the kiosk routes the order accordingly. The Category Screen is the first full menu interaction stage, displaying all product categories configured via the back-office cloud admin interface. Each category reflects real-time availability, pricing, and visibility rules set by the admin for that specific device or branch. 
+        This screen serves as the gateway for product exploration and customer engagement, ensuring that only valid and up to date data is presented to the user. Any changes performed from the admin dashboard are reflected after running the last update, without needing to restart or refresh the kiosk.</p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
-        <img src="assets/images/smart-kiosk-home-screen.png" alt="smart-kiosk-home-screen"
-             class="img-thumbnail shadow-sm zoom-effect"
+        <img src="assets/images/smart-kiosk-category-screen.png" alt="smart-kiosk-category-screen"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Category Screen</div>
       </div>
     </div>
   </div>
 
   <!-- Product Screen -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
+  <div class="container my-3">
+    <div class="row align-items-center">
+      <div class="col-lg-7 col-md-12">
         <h4>Product Screen</h4>
         <p>Once a customer taps a menu category, the corresponding product list is displayed. Each item includes a thumbnail image, title, price, and optionally, a short description. The kiosk interface supports real-time updates, so any product activations, deactivations, or price adjustments in the cloud admin panel are instantly reflected. This interface enables users to browse efficiently while applying branch-specific visibility settings.</p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
         <img src="assets/images/smart-kiosk-product-screen.png" alt="smart-kiosk-product-screen"
-             class="img-thumbnail shadow-sm zoom-effect"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Product Screen</div>
       </div>
     </div>
   </div>
 
   <!-- Ordering in Smart Kiosk -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
-        <h4>Ordering in Smart Kiosk</h4>
+  <div class="container my-3">
+    <div class="row align-items-center flex-row-reverse">
+      <div class="col-lg-7 col-md-12">
+        <h4>Add to Cart</h4>
         <p>When a customer selects a product, the kiosk opens a product details view where options and modifiers can be selected. These include attributes such as cup size, extra toppings, cooking preferences, or combo additions. The app validates that all mandatory selections are made before enabling the “Add to Cart” button. This structured logic ensures that kitchen prep instructions are clear and standardized across all orders.</p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
         <img src="assets/images/smart-kiosk-order.png" alt="smart-kiosk-order"
-             class="img-thumbnail shadow-sm zoom-effect"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Add-to-Cart Screen</div>
       </div>
     </div>
   </div>
 
   <!-- Add to Cart -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
+  <div class="container my-3">
+    <div class="row align-items-center">
+      <div class="col-lg-7 col-md-12">
         <h4>Cart Overview</h4>
         <p>After adding an item, the customer is redirected to the cart overview screen. The cart shows all selected items, modifiers, and subtotal prices. From here, customers can update quantities, remove items, or go back to browse. This screen is dynamically updated to prevent duplicate entries and to handle session expiration for inactive users.</p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
         <img src="assets/images/smart-kiosk-add-to-cart.png" alt="smart-kiosk-add-to-cart"
-             class="img-thumbnail shadow-sm zoom-effect"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Add-to-Cart Screen</div>
       </div>
     </div>
   </div>
 
   <!-- Checkout -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
-        <h4>Checking Out</h4>
+  <div class="container my-3">
+    <div class="row align-items-center flex-row-reverse">
+      <div class="col-lg-7 col-md-12">
+        <h4>Checkout</h4>
         <p>When ready, the customer taps “Pay Order,” initiating the checkout process. The kiosk then prompts the user to choose a payment method: either cash or credit card. Depending on system setup, this screen may also integrate loyalty or promo code modules. Once the payment is processed, the system registers the order in POS and the kitchen station in real-time.</p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
         <img src="assets/images/smart-kiosk-checkout.png" alt="smart-kiosk-checkout"
-             class="img-thumbnail shadow-sm zoom-effect"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Checkout Screen</div>
       </div>
     </div>
   </div>
 
   <!-- Success Screen -->
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <div class="col-lg-7 col-md-12 mb-4">
-        <h4>Order Completion</h4>
+  <div class="container my-3">
+    <div class="row align-items-center">
+      <div class="col-lg-7 col-md-12">
+        <h4>Order Success</h4>
         <p>Once the order is confirmed and sent, the kiosk displays a “Thank You” confirmation screen. Customers can optionally print their receipt by clicking the “Complete” button, after which the app resets for the next user. This final step concludes the session and ensures data is securely stored in the cloud and kitchen queue.</p>
       </div>
       <div class="col-lg-5 col-md-12 text-center">
         <img src="assets/images/smart-kiosk-success-screen.png" alt="smart-kiosk-success-screen"
-             class="img-thumbnail shadow-sm zoom-effect"
+             class="shadow-sm zoom-effect"
              style="max-height: 380px; width: 100%; object-fit: contain;">
+        <div class="mt-2 text-muted">Smart Kiosk Success Screen</div>
       </div>
-    </section>
+</section>
+
       <section class="docs-section" id="item-3-7">
   <h2 class="section-heading">Kiosk–Cloud Integration</h2>
   <p>The Smart Kiosk application is directly powered by the Cloud Admin backend. All content displayed on the kiosk—such as categories, products, modifiers, pricing, and offers is fully controlled through the web-based administration interface. Any changes made via Cloud Admin (e.g., activating/deactivating products, changing prices, creating combo offers, or updating translations) are reflected in real time on the kiosk screens.</p>
@@ -399,12 +416,21 @@
   </div>
 </section>
 
-  </div>
+<!-- Conclusion Section -->
+<article class="docs-article" id="section-4">
+  <header class="docs-header">
+    <h1 class="docs-heading">Conclusion</h1>
+  </header>
+  <p>The Smart Kiosk solution delivers a complete self-service ecosystem tailored for modern food and beverage operations. By combining robust hardware components with dynamic cloud-powered software, it streamlines the ordering process, reduces queue times, and minimizes human error. The system is fully modular, adaptable for dine-in, takeaway, or hybrid service models, and ensures optimal performance whether used in standalone locations or across multiple branches.</p>
+
+  <p>On the hardware side, kiosks are optimized for 24/7 service with durable touchscreens, integrated payment modules, receipt printers, and wall or stand mountable designs. From the software perspective, everything—from product displays to POS sync and customer journey's is handled in real time through tight integration with the Cloud Admin system. Together, these layers enable businesses to deliver a consistent, high speed, and scalable customer experience while maintaining centralized control over every kiosk in operation.</p>
+</section>
+</article>
+ 
+</div>
 </div>
       </section><!--//section-->
 			  </article><!--//docs-article-->
-
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
