@@ -12670,6 +12670,10 @@ a.text-link:hover {
 
 /*# sourceMappingURL=theme.css.map */
 
+.docs-content p {
+  text-align: justify;
+}
+
 
 
 
