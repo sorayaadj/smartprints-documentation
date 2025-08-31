@@ -119,6 +119,7 @@
       <li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Real-Time Communication</a></li>
       <li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">POS & Payment Integration</a></li>
       <li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">Bilingual Interaction</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-2-4">Security & Compliance</a></li>
 
       <li class="nav-item section-title mt-3">
         <a class="nav-link scrollto" href="#section-3">
@@ -147,21 +148,52 @@
     <article class="docs-article" id="section-1">
       <header class="docs-header">
         <h1 class="docs-heading">Smart WhatsApp Overview</h1>
+      <p>Smart WhatsApp is a conversational ordering solution built on top of WhatsApp Business API. It provides restaurants with a fully automated way to handle customer orders directly within WhatsApp without requiring users to download an application or access a web portal.</p>
+        <p>The module operates as an extension of the Smart Prints ecosystem, tightly integrated with the restaurant’s POS, kitchen display, and payment gateways. Customers initiate interaction by sending a greeting or scanning a QR code that redirects them to WhatsApp chat. The bot responds with menu options, prompts for delivery or dine-in choices, and guides the customer through item selection, customization, and payment.</p>
       </header>
 
       <section class="docs-section" id="item-1-1">
         <h2 class="section-heading">How It Works</h2>
-        <p>Smart WhatsApp enables customers to place restaurant orders directly through WhatsApp via automated messaging. Using keyword triggers and a predefined flow, users can view the menu, customize orders, and finalize payments seamlessly through chat.</p>
+        <p>  The workflow consists of three primary layers that ensure reliability, security, and a seamless handoff between customer chat sessions and restaurant operations:</p>
+           <ul>
+    <li>
+      <strong>Customer Interaction Layer</strong>
+      <ul>
+        <li>Customers interact entirely through WhatsApp.</li>
+        <li>Inputs are received as free text, quick replies, or number based selections.</li>
+        <li>Rich responses such as product lists, images, and promotional banners are delivered dynamically using WhatsApp’s message templates.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Processing Layer</strong>
+      <ul>
+        <li>Incoming messages are routed through the WhatsApp Business API and processed via secure webhooks.</li>
+        <li>A rule engine interprets user inputs, identifies intent (menu browsing, customization, checkout), and updates the active conversation state.</li>
+        <li>The system cross checks product availability, pricing, and applicable discounts in real-time with the restaurant’s POS and menu database.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Order Fulfillment Layer</strong>
+      <ul>
+        <li>Confirmed orders are instantly pushed to the restaurant’s POS.</li>
+        <li>Depending on the configuration, orders are simultaneously displayed on the kitchen display system (KDS).</li>
+        <li>Customers receive automated status updates (order accepted, in preparation, out for delivery, completed).</li>
+      </ul>
+    </li>
+  </ul>
         <div class="text-center my-4">
-          <img src="assets/images/Whats_App_Chatbot.png" alt="How it works" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 300px; width: 100%;">
+          <img src="assets/images/Whats_App_Chatbot.png" alt="How it works" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 350px; width: 100%;">
         </div>
       </section>
 
       <section class="docs-section" id="item-1-2">
         <h2 class="section-heading">System Architecture</h2>
-        <p>The Smart WhatsApp module connects to the restaurant's POS, menu database, and automation service to handle order input/output and payment processing. All communication is handled through WhatsApp’s business API using secure webhooks.</p>
+        <p>The Smart WhatsApp solution is built around modular integrations and secure communication pipelines.</p>
+         --------------
         <div class="text-center my-4">
-          <img src="assets/images/smart-whatsapp-ask.png" alt="System Architecture" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 300px; width: 100%;">
+          <img src="assets/images/" alt="System Architecture" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 200px; width: 100%;">
         </div>
       </section>
     </article>
@@ -171,14 +203,18 @@
 
       <section class="docs-section" id="item-2-1">
         <h2 class="section-heading">Real-Time Communication</h2>
-        <p>Orders are placed via WhatsApp in real-time, allowing users to receive instant confirmation, item details, and delivery timing directly in chat.</p>
+          <ul>
+           <li>All interactions occur instantly through WhatsApp.</li>
+           <li>Order confirmations, estimated preparation time, and delivery status updates are communicated without delay.</li>
+           <li>Supports proactive notifications such as “your order is ready for pickup.”</li>
+          </ul>
         <div class="d-flex justify-content-center gap-4 mb-4">
              
               <div>
                <img src="assets/images/smart-whatsapp-ask.png"
                 alt="order accepted"
                 class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 300px; width: 100%; cursor: pointer;"
+                style="max-width: 200px; width: 100%; cursor: pointer;"
                 data-bs-toggle="modal"
                 data-bs-target="#imageModal1">
              </div>
@@ -186,7 +222,7 @@
               <img src="assets/images/smart-whatsapp-menu.png"
                  alt="order active"
                 class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 300px; width: 100%; cursor: pointer;"
+                style="max-width: 200px; width: 100%; cursor: pointer;"
                 data-bs-toggle="modal"
                 data-bs-target="#imageModal2">
             </div>
@@ -197,7 +233,7 @@
                <img src="assets/images/smart-whatsapp-callory-count.png"
                 alt="order accepted"
                 class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 300px; width: 100%; cursor: pointer;"
+                style="max-width: 200px; width: 100%; cursor: pointer;"
                 data-bs-toggle="modal"
                 data-bs-target="#imageModal1">
              </div>
@@ -205,7 +241,7 @@
               <img src="assets/images/smart-whatsapp-order.png"
                  alt="order active"
                 class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 300px; width: 100%; cursor: pointer;"
+                style="max-width: 200px; width: 100%; cursor: pointer;"
                 data-bs-toggle="modal"
                 data-bs-target="#imageModal2">
             </div>
@@ -214,14 +250,31 @@
 
       <section class="docs-section" id="item-2-2">
         <h2 class="section-heading">POS & Payment Integration</h2>
-        <p>All WhatsApp orders are automatically pushed to the POS and can include online payment gateways. This reduces manual input and ensures accurate reporting.</p>
-        
+        <ul>
+      <li>Direct POS synchronization eliminates manual data entry.</li>
+      <li>Menu, prices, and promotions are always up to date since they are pulled dynamically from the POS database.</li>
+      <li>Multiple payment gateways can be enabled (credit card, wallet, cash-on-delivery).</li>
+      <li>Payment reconciliation is automatically logged in the POS, ensuring accurate financial records.</li>
+       </ul>        
       </section>
 
       <section class="docs-section" id="item-2-3">
         <h2 class="section-heading">Bilingual Interaction</h2>
-        <p>Smart WhatsApp supports full bilingual interactions in Arabic and English, auto-detecting user language to tailor all prompts and menu content accordingly.</p>
-       
+        <ul>
+      <li>Supports full Arabic and English workflows.</li>
+      <li>Language detection occurs at the first customer input.</li>
+      <li>All templates, product names, and instructions are localized automatically.</li>
+      <li>Customers can switch language mid-conversation using a keyword trigger.</li>
+        </ul>       
+      </section>
+
+      <section class="docs-section" id="item-2-4">
+        <h2 class="section-heading">Security & Compliance</h2>
+    <ul>
+      <li>End-to-end encryption through WhatsApp ensures message privacy.</li>
+      <li>Sensitive data such as payment tokens never pass through the chatbot logic directly but via secure API redirections.</li>
+      <li>Logs are anonymized to comply with data protection standards.</li>
+    </ul>   
       </section>
     </article>
 
@@ -230,14 +283,28 @@
 
       <section class="docs-section" id="item-3-1">
         <h2 class="section-heading">Customer Preferences</h2>
-        <p>By tracking user interactions, Smart WhatsApp generates insights into customer preferences such as favorite items, reorder behavior, and language usage.</p>
-        
+      <p>Smart WhatsApp records customer interactions in an anonymized way, allowing restaurants to
+    understand what customers like most. These insights can include frequent items, order
+    frequency, and the preferred language of interaction. By analyzing these behaviors,
+    restaurants can identify top-selling products and measure customer loyalty patterns.</p>        
       </section>
 
       <section class="docs-section" id="item-3-2">
         <h2 class="section-heading">Order Patterns</h2>
-        <p>Analytics tools show peak ordering times, average basket size, and payment method distribution, helping optimize marketing and staffing decisions.</p>
-       
+ <p>
+    The system includes built-in analytics dashboards that give managers visibility into
+    ordering behavior. For example:
+  </p>
+  <ul>
+    <li>Peak order hours across the day and week.</li>
+    <li>Average basket size and most frequently combined items.</li>
+    <li>Most used payment methods and their share of transactions.</li>
+    <li>Distribution between delivery, pickup, and dine-in orders.</li>
+  </ul>
+  <p>
+    This information can be exported and integrated into external BI tools for deeper analysis,
+    enabling more informed business and staffing decisions.
+  </p>       
       </section>
     </article>
 
@@ -246,14 +313,26 @@
 
       <section class="docs-section" id="item-4-1">
         <h2 class="section-heading">Response Management</h2>
-        <p>Admins can edit auto-reply logic and menus via a backend panel, adjusting scripts, products, or even promotional banners from a central interface.</p>
-        
+<p>Administrators have full control over dialog flows and automated replies without needing
+    development changes. The admin panel provides tools to:</p>
+  <ul>
+    <li>Edit and optimize dialog logic with minimal effort.</li>
+    <li>Add or remove product triggers and adjust templates for replies.</li>
+    <li>Manage menu updates, seasonal offers, or promotions directly from a unified dashboard.</li>
+  </ul>
+  <p>Keyword triggers (such as “help”, “offers”, or “track order”) can also be tailored to each
+    branch, giving flexibility for localized experiences.</p>   
       </section>
 
       <section class="docs-section" id="item-4-2">
         <h2 class="section-heading">24/7 Support Tools</h2>
-        <p>Includes diagnostics, logs, and fallback options. In case of connection issues, backup prompts or human takeover can be initiated from admin panel.</p>
-       
+        <p>The system is designed to never leave a customer at a dead end. In case automation fails
+    to understand the request, fallback mechanisms and monitoring tools are available:</p>
+  <ul>
+    <li>Automatic redirection to human support when needed.</li>
+    <li>Comprehensive logs and diagnostics for tracing failures.</li>
+    <li>Backup prompts to ensure customer engagement continues smoothly.</li>
+  </ul>       
   </div>
 </div>
       </section><!--//section-->
