@@ -111,7 +111,7 @@
         </a>
       </li>
       <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Overview</a></li>
-      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Ordering Process Overview</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Order Process Overview</a></li>
 
       <li class="nav-item section-title mt-3">
         <a class="nav-link scrollto" href="#section-2">
@@ -150,6 +150,8 @@
 	 <div class="docs-content">
   <div class="container">
 
+     <!-- Section 1 : Smart Menus -->
+
     <article class="docs-article" id="section-1">
       <header class="docs-header">
         <h1 class="docs-heading">Smart Menu</h1>
@@ -167,11 +169,12 @@ The Smart Menu is a responsive web based ordering application designed primarily
 
 </section>
 
+ <!-- ordering process -->
+
   <section class="docs-section" id="item-1-2">
-  <h2 class="section-heading">Ordering Process Overview</h2>
+  <h2 class="section-heading">Order Process Overview</h2>
   <div class="container my-4">
 
-    <!-- Text first -->
     <div class="col-12">
       <p>
         Customers begin by opening the Smart Menu web application in their browser. From this point, they can navigate through a structured digital menu organized into categories and subcategories. Each product entry provides detailed information, including images, descriptions, ingredient lists, and allergen warnings where applicable.
@@ -182,7 +185,8 @@ The Smart Menu is a responsive web based ordering application designed primarily
     </div>
 
     <div class="col-12 text-center mt-4">
-      <img src="assets/images/smart-menu-workflow.png" 
+      <img id="workflowImage"
+           src="assets/images/smart-menu-workflow.png" 
            alt="Smart Menu Ordering"
            class="shadow-sm zoom-effect"
            style="max-height: 400px; width: auto; max-width: 100%; object-fit: scale-down; background-color: transparent; border: 1px solid #ddd; border-radius: 4px;">
@@ -432,7 +436,7 @@ The Smart Menu is a responsive web based ordering application designed primarily
     <h1 class="docs-heading">More to Smart Menu</h1>
   </header>
 
-  <!-- item-3-1: Kitchen Application -->
+  <!--  Kitchen Application -->
   <section class="docs-section" id="item-3-1">
     <h2 class="section-heading">Kitchen Application</h2>
     <div class="container my-4">
@@ -449,7 +453,7 @@ The Smart Menu is a responsive web based ordering application designed primarily
     </div>
   </section>
 
-  <!-- item-3-2: Smart Automation -->
+  <!--  Smart Automation -->
   <section class="docs-section" id="item-3-2">
     <h2 class="section-heading">Smart Automation</h2>
     <div class="container my-4">
@@ -459,7 +463,7 @@ The Smart Menu is a responsive web based ordering application designed primarily
     </div>
   </section>
 
-  <!-- item-3-3: Cloud Administration -->
+  <!--  Cloud Administration -->
   <section class="docs-section" id="item-3-3">
     <h2 class="section-heading">Cloud Administration</h2>
     <div class="container my-4">
@@ -476,8 +480,7 @@ The Smart Menu is a responsive web based ordering application designed primarily
     </div>
   </section>
 
-  <!-- item-3-4: Data & Language Support -->
-
+  <!-- Data & Language Support -->
 
   <section class="docs-section" id="item-3-4">
     <h2 class="section-heading">Data & Language Support</h2>
@@ -538,18 +541,71 @@ The Smart Menu is a responsive web based ordering application designed primarily
         modalImage.src = this.src;
 
         let naturalWidth = this.naturalWidth;
-  let displayedWidth = this.clientWidth;
-  let targetWidth = Math.min(displayedWidth * 1.5, naturalWidth);
+        let displayedWidth = this.clientWidth;
+        let targetWidth = Math.min(displayedWidth * 1.5, naturalWidth);
 
-  modalImage.style.width = targetWidth + "px";
-  modalImage.style.height = "auto";
-  modalImage.style.maxWidth = "90vw";
-  modalImage.style.maxHeight = "90vh";
-
+        modalImage.style.width = targetWidth + "px";
+        modalImage.style.height = "auto";
+        modalImage.style.maxWidth = "90vw";
+        modalImage.style.maxHeight = "90vh";
+        modalImage.style.transform = "none"; // reset transform
 
         // Show the modal using Bootstrap's method
         const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
         imageModal.show();
+
+        // 🔹 Extra controls ONLY for workflow image
+        if (this.id === "workflowImage") {
+          let scale = 1;
+          let posX = 0, posY = 0, isDragging = false, startX, startY;
+
+          modalImage.style.cursor = "grab";
+
+          // Zoom with scroll
+          modalImage.onwheel = function (e) {
+            e.preventDefault();
+            scale += e.deltaY * -0.001;
+            scale = Math.min(Math.max(1, scale), 5); // limit zoom between 1x and 5x
+            modalImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+          };
+
+          // Drag when zoomed
+          modalImage.onmousedown = function (e) {
+            if (scale <= 1) return; // no drag if not zoomed
+            isDragging = true;
+            startX = e.clientX - posX;
+            startY = e.clientY - posY;
+            modalImage.style.cursor = "grabbing";
+          };
+
+          document.onmouseup = function () {
+            isDragging = false;
+            modalImage.style.cursor = "grab";
+          };
+
+          document.onmousemove = function (e) {
+            if (isDragging) {
+              posX = e.clientX - startX;
+              posY = e.clientY - startY;
+              modalImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+            }
+          };
+
+          // Optional: double click to reset zoom/pan
+          modalImage.ondblclick = function () {
+            scale = 1;
+            posX = 0;
+            posY = 0;
+            modalImage.style.transform = "none";
+          };
+        } else {
+          // Reset handlers for normal images
+          modalImage.onwheel = null;
+          modalImage.onmousedown = null;
+          document.onmouseup = null;
+          document.onmousemove = null;
+          modalImage.ondblclick = null;
+        }
       });
     });
   });
