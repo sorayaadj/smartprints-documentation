@@ -184,14 +184,14 @@ The Smart Menu is a responsive web based ordering application designed primarily
       </p>
     </div>
 
-    <div class="col-12 text-center mt-4">
-      <img id="workflowImage"
-           src="assets/images/smart-menu-workflow.png" 
-           alt="Smart Menu Ordering"
-           class="shadow-sm zoom-effect"
-           style="max-height: 400px; width: auto; max-width: 100%; object-fit: scale-down; background-color: transparent; border: 1px solid #ddd; border-radius: 4px;">
-      <div class="mt-2 text-muted">Smart Menu Workflow</div>
-    </div>
+      <div class="col-12 text-center mt-4">
+  <img id="workflowImage"
+       src="assets/images/smart-menu-workflow.png" 
+       alt="Smart Menu Ordering"
+       class="shadow-sm zoom-effect"
+       style="max-height: 400px; width: auto; max-width: 100%; object-fit: scale-down; background-color: transparent; border: 1px solid #ddd; border-radius: 4px;">
+  <div class="mt-2 text-muted">Smart Menu Workflow</div>
+</div>
 
   </div>
 </section>
@@ -625,6 +625,64 @@ The Smart Menu is a responsive web based ordering application designed primarily
 </div>
 
 <script>
+  
+// === Image Modal img zoom in / out ===
+
+
+<!-- Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Generic zoom handler for all .zoom-effect images
+    const zoomImages = document.querySelectorAll('.zoom-effect');
+
+    zoomImages.forEach(function (img) {
+      img.addEventListener('click', function () {
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = this.src;
+
+        let naturalWidth = this.naturalWidth;
+        let displayedWidth = this.clientWidth;
+        let targetWidth = Math.min(displayedWidth * 1.5, naturalWidth);
+
+        modalImage.style.width = targetWidth + "px";
+        modalImage.style.height = "auto";
+        modalImage.style.maxWidth = "90vw";
+        modalImage.style.maxHeight = "90vh";
+
+        // Show the modal
+        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        imageModal.show();
+      });
+    });
+
+    // Special case: workflowImage → always enlarge x2
+    const workflow = document.getElementById('workflowImage');
+    if (workflow) {
+      workflow.addEventListener('click', function (e) {
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = this.src;
+
+        const displayedWidth = this.clientWidth || this.width || 350;
+        const targetWidth = Math.min(this.naturalWidth || displayedWidth * 2, displayedWidth * 2);
+
+        modalImage.style.width = targetWidth + 'px';
+        modalImage.style.height = 'auto';
+        modalImage.style.maxWidth = '90vw';
+        modalImage.style.maxHeight = '90vh';
+
+        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        imageModal.show();
+      });
+    }
+  });
+</script>
+
+
+
+
+
+// ===                   ===
+
 
 // === Smart Search Autocomplete ===
 document.addEventListener('DOMContentLoaded', function () {
