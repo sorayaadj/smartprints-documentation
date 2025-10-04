@@ -24,6 +24,10 @@
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
 
+     <!-- GOJS Library -->  
+    <script src="https://cdn.jsdelivr.net/npm/gojs/release/go.js"></script>
+
+
 
 
    <style>
@@ -106,10 +110,11 @@
     <ul class="section-items list-unstyled nav flex-column pb-3">
       <li class="nav-item section-title">
         <a class="nav-link scrollto active" href="#section-1">
-          <span class="theme-icon-holder me-2"><i class="fab fa-whatsapp"></i></span>Smart WhatsApp Overview
+          <span class="theme-icon-holder me-2"><i class="fab fa-whatsapp"></i></span>Smart WhatsApp
         </a>
       </li>
-      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">How It Works</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Overview</a></li>
+      <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Conversation Flow</a></li>
 
       <li class="nav-item section-title mt-3">
         <a class="nav-link scrollto" href="#section-2">
@@ -145,58 +150,57 @@
 	    <div class="docs-content">
   <div class="container">
 
-    <article class="docs-article" id="section-1">
-      <header class="docs-header">
-        <h1 class="docs-heading">Smart WhatsApp Overview</h1>
-      <p>Smart WhatsApp is a conversational ordering solution built on top of WhatsApp Business API. It provides restaurants with a fully automated way to handle customer orders directly within WhatsApp without requiring users to download an application or access a web portal.</p>
-        <p>The module operates as an extension of the Smart Prints ecosystem, tightly integrated with the restaurant’s POS, kitchen display, and payment gateways. Customers initiate interaction by sending a greeting or scanning a QR code that redirects them to WhatsApp chat. The bot responds with menu options, prompts for delivery or dine-in choices, and guides the customer through item selection, customization, and payment.</p>
-      </header>
+    <!-- Section 1 : Smart WhatsApp -->
 
-      <section class="docs-section" id="item-1-1">
-        <h2 class="section-heading">How It Works</h2>
-        <p>  The workflow consists of three primary layers that ensure reliability, security, and a seamless handoff between customer chat sessions and restaurant operations:</p>
-           <ul>
-    <li>
-      <strong>Customer Interaction Layer</strong>
-      <ul>
-        <li>Customers interact entirely through WhatsApp.</li>
-        <li>Inputs are received as free text, quick replies, or number based selections.</li>
-        <li>Rich responses such as product lists, images, and promotional banners are delivered dynamically using WhatsApp’s message templates.</li>
-      </ul>
-    </li>
+<article class="docs-article" id="section-1">
+  <header class="docs-header">
+    <h1 class="docs-heading">Smart WhatsApp</h1>
+  </header>
 
-    <li>
-      <strong>Processing Layer</strong>
-      <ul>
-        <li>Incoming messages are routed through the WhatsApp Business API and processed via secure webhooks.</li>
-        <li>A rule engine interprets user inputs, identifies intent (menu browsing, customization, checkout), and updates the active conversation state.</li>
-        <li>The system cross checks product availability, pricing, and applicable discounts in real-time with the restaurant’s POS and menu database.</li>
-      </ul>
-    </li>
+  <!-- Overview -->
+  <section class="docs-section" id="item-1-1">
+    <h2 class="section-heading">Overview</h2>
+    <div class="container my-4">
+      <p>
+        Smart WhatsApp is a conversational ordering solution that integrates directly into WhatsApp, allowing customers to interact with a restaurant or retail brand through a simple chat interface. Instead of browsing a web menu or downloading an app, customers can place their orders, receive support, and track updates through the same platform they already use daily.
+      </p>
+      <p>
+        The solution automates menu browsing, order placement, delivery or pickup selection, payment processing, and real-time status updates. By connecting seamlessly with the Point of Sale (POS) and back-office systems, Smart WhatsApp ensures accuracy, speed, and convenience while keeping the experience entirely chat-based and natural for customers.
+      </p>
+      <p>
+        Beyond ordering, Smart WhatsApp also enables personalized upselling, customer support automation, and secure handling of payments and customer data. This makes it an all-in-one conversational commerce tool that fits into the daily habits of customers.
+      </p>
+    </div>
+  </section>
 
-    <li>
-      <strong>Order Fulfillment Layer</strong>
+  <!-- Conversation Flow -->
+  <section class="docs-section" id="item-1-2">
+    <h2 class="section-heading">Conversation Flow</h2>
+    <div class="container my-4">
+      <p>
+        The Smart WhatsApp chatbot guides customers through a structured conversation flow designed to replicate the ordering process in a natural chat format. The steps are:
+      </p>
       <ul>
-        <li>Confirmed orders are instantly pushed to the restaurant’s POS.</li>
-        <li>Depending on the configuration, orders are simultaneously displayed on the kitchen display system (KDS).</li>
-        <li>Customers receive automated status updates (order accepted, in preparation, out for delivery, completed).</li>
+        <li><strong>Greeting:</strong> The chatbot welcomes the customer and shows available menu categories.</li>
+        <li><strong>Product Selection:</strong> Customers browse menu items, choose customizations, and confirm quantity.</li>
+        <li><strong>Upselling:</strong> The chatbot suggests complementary products or promotions.</li>
+        <li><strong>Delivery or Pickup:</strong> The chatbot asks for the customer’s location (for delivery) or provides branch options (for pickup).</li>
+        <li><strong>Payment:</strong> The chatbot generates a secure payment link or confirms cash-on-delivery options.</li>
+        <li><strong>Order Tracking:</strong> Customers receive notifications such as “Order confirmed,” “In preparation,” and “Out for delivery.”</li>
       </ul>
-    </li>
-  </ul>
-        <div class="text-center my-4">
-          <img src="assets/images/Whats_App_Chatbot.png" alt="How it works" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 350px; width: 100%;">
+      <p>
+        This conversational structure minimizes effort from the customer and makes the ordering experience faster and more intuitive than traditional methods.
+      </p>
+         <div class="text-center my-4">
+          <img src="assets/images/Smart-WhatsApp.png" alt="How it works" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 350px; width: 100%;">
         </div>
-      </section>
+        <div id="chatbotDiagramDiv"
+     style="width:100%; height:600px; background-color: #fff; border:1px solid #ccc;"></div>
 
-      <section class="docs-section" id="item-1-2">
-        <h2 class="section-heading">System Architecture</h2>
-        <p>The Smart WhatsApp solution is built around modular integrations and secure communication pipelines.</p>
-         --------------
-        <div class="text-center my-4">
-          <img src="assets/images/" alt="System Architecture" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 200px; width: 100%;">
-        </div>
-      </section>
-    </article>
+    </div>
+  </section>
+</article>
+           
 
     <article class="docs-article" id="section-2">
       <header class="docs-header"><h1 class="docs-heading">Features</h1></header>
@@ -484,6 +488,70 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 </style>
+
+<script>
+  const $ = go.GraphObject.make;
+
+  const chatbotDiagram = $(go.Diagram, "chatbotDiagramDiv", {
+    "undoManager.isEnabled": true,
+    layout: $(go.TreeLayout, { angle: 90, layerSpacing: 40 })
+  });
+
+  // Node template with click ha
+  chatbotDiagram.nodeTemplate =
+    $(go.Node, "Auto",
+      $(go.Shape, "RoundedRectangle",
+        { fill: "#4d84fc", strokeWidth: 0 }),
+      $(go.TextBlock,
+        { margin: 8, stroke: "white", font: "bold 14px sans-serif" },
+        new go.Binding("text", "name"))
+    );
+
+  // Link template (arrows)
+  chatbotDiagram.linkTemplate =
+    $(go.Link,
+      { routing: go.Routing.Normal, curve: go.Curve.None },
+      $(go.Shape, { strokeWidth: 2, stroke: "#555" }),
+      $(go.Shape, { toArrow: "Standard", stroke: null, fill: "#555" })
+    );
+
+  // Data model
+  chatbotDiagram.model = new go.GraphLinksModel(
+    [
+      { key: "1", name: "Customer starts WhatsApp chat" },
+      { key: "2", name: "Chatbot Greets & Displays Menu" },
+      { key: "3", name: "Customer Select Items" },
+      { key: "4", name: "Chatbot Suggests Upselling" },
+      { key: "5", name: "Chatbot asks: Delivery or Pickup" },
+      { key: "6", name: "Delivery: Share Location" },
+      { key: "7", name: "Pickup: Choose Branch" },
+
+      // Payment process
+      { key: "8", name: "Order Summary" },
+      { key: "9", name: "Secure Payment Link" },
+      { key: "10", name: "Payment Confirmation" },
+      { key: "11", name: "Order Fulfillment" }
+    ],
+    [
+      { from: "1", to: "2" },
+      { from: "2", to: "3" },
+      { from: "2", to: "4" },
+      { from: "3", to: "5" },
+      { from: "5", to: "6" },
+      { from: "5", to: "7" },
+
+      // Converging links to payment
+      { from: "6", to: "8" },
+      { from: "7", to: "8" },
+
+      // Payment chain
+      { from: "8", to: "9" },
+      { from: "9", to: "10" },
+      { from: "10", to: "11" }
+    ]
+  );
+</script>
+
 
 
 

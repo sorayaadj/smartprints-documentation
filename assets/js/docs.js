@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const chatbotDiagram = new go.Diagram("chatbotDiagramDiv");
 
 
 /*imgModal
