@@ -144,8 +144,7 @@
     </ul>
   </nav>
 </div>
-</nav><!--//docs-nav-->
-	  </div><!--//docs-sidebar-->
+
 
 	    <div class="docs-content">
   <div class="container">
@@ -490,66 +489,97 @@ document.addEventListener('DOMContentLoaded', function () {
 </style>
 
 <script>
+  function init() {
   const $ = go.GraphObject.make;
 
   const chatbotDiagram = $(go.Diagram, "chatbotDiagramDiv", {
     "undoManager.isEnabled": true,
-    layout: $(go.TreeLayout, { angle: 90, layerSpacing: 40 })
+    layout: $(go.LayeredDigraphLayout, { direction: 90, layerSpacing: 40 })
   });
 
-  // Node template with click ha
-  chatbotDiagram.nodeTemplate =
+  // --- Define node templates ---
+  chatbotDiagram.nodeTemplateMap.add(
+    "Start",
     $(go.Node, "Auto",
-      $(go.Shape, "RoundedRectangle",
-        { fill: "#4d84fc", strokeWidth: 0 }),
-      $(go.TextBlock,
-        { margin: 8, stroke: "white", font: "bold 14px sans-serif" },
-        new go.Binding("text", "name"))
-    );
+      $(go.Shape, "Capsule", { fill: "#4CAF50", strokeWidth: 0 }),
+      $(go.TextBlock, "Start", { margin: 8, stroke: "white", font: "bold 12px sans-serif" },
+        new go.Binding("text", "text"))
+    )
+  );
 
-  // Link template (arrows)
-  chatbotDiagram.linkTemplate =
-    $(go.Link,
-      { routing: go.Routing.Normal, curve: go.Curve.None },
-      $(go.Shape, { strokeWidth: 2, stroke: "#555" }),
-      $(go.Shape, { toArrow: "Standard", stroke: null, fill: "#555" })
-    );
+  chatbotDiagram.nodeTemplateMap.add(
+    "",
+    $(go.Node, "Auto",
+      $(go.Shape, "Rectangle", { fill: "#4d84fc", strokeWidth: 0 }),
+      $(go.TextBlock, { margin: 8, stroke: "white", font: "bold 12px sans-serif", wrap: go.Wrap.Fit, width: 160 },
+        new go.Binding("text", "text"))
+    )
+  );
 
-  // Data model
+  chatbotDiagram.nodeTemplateMap.add(
+    "Conditional",
+    $(go.Node, "Auto",
+      $(go.Shape, "Diamond", { fill: "#ff9800", strokeWidth: 0 }),
+      $(go.TextBlock, { margin: 8, stroke: "white", font: "bold 12px sans-serif", wrap: go.Wrap.Fit, width: 160, textAlign: "center" },
+        new go.Binding("text", "text"))
+    )
+  );
+
+  chatbotDiagram.nodeTemplateMap.add(
+    "End",
+    $(go.Node, "Auto",
+      $(go.Shape, "Capsule", { fill: "#d32f2f", strokeWidth: 0 }),
+      $(go.TextBlock, "End", { margin: 8, stroke: "white", font: "bold 12px sans-serif" },
+        new go.Binding("text", "text"))
+    )
+  );
+
+  // --- Define link style ---
+  chatbotDiagram.linkTemplate = $(go.Link,
+    { routing: go.Routing.AvoidsNodes, curve: go.Curve.JumpOver, corner: 5, toShortLength: 4 },
+    $(go.Shape, { strokeWidth: 2, stroke: "#555" }),
+    $(go.Shape, { toArrow: "Standard", stroke: null, fill: "#555" })
+  );
+
+  // --- Define Smart WhatsApp Flowchart ---
   chatbotDiagram.model = new go.GraphLinksModel(
     [
-      { key: "1", name: "Customer starts WhatsApp chat" },
-      { key: "2", name: "Chatbot Greets & Displays Menu" },
-      { key: "3", name: "Customer Select Items" },
-      { key: "4", name: "Chatbot Suggests Upselling" },
-      { key: "5", name: "Chatbot asks: Delivery or Pickup" },
-      { key: "6", name: "Delivery: Share Location" },
-      { key: "7", name: "Pickup: Choose Branch" },
-
-      // Payment process
-      { key: "8", name: "Order Summary" },
-      { key: "9", name: "Secure Payment Link" },
-      { key: "10", name: "Payment Confirmation" },
-      { key: "11", name: "Order Fulfillment" }
+      { key: 1, category: "Start", text: "Customer starts WhatsApp Chat" },
+      { key: 2, text: "Chatbot greets and displays menu" },
+      { key: 3, text: "Customer browses menu & chooses item" },
+      { key: 4, text: "Chatbot suggests complementary or upselling items" },
+      { key: 5, category: "Conditional", text: "Is customer done ordering?" },
+      { key: 6, text: "Not done: continue browsing" },
+      { key: 7, text: "Done ordering: choose delivery or pickup" },
+      { key: 8, text: "Delivery" },
+      { key: 9, text: "Pickup" },
+      { key: 10, text: "Order Summary" },
+      { key: 11, text: "Secure Payment Link" },
+      { key: 12, text: "Payment Confirmation" },
+      { key: 13, text: "Order Fulfillment" },
+      { key: 14, category: "End", text: "End Process" }
     ],
     [
-      { from: "1", to: "2" },
-      { from: "2", to: "3" },
-      { from: "2", to: "4" },
-      { from: "3", to: "5" },
-      { from: "5", to: "6" },
-      { from: "5", to: "7" },
-
-      // Converging links to payment
-      { from: "6", to: "8" },
-      { from: "7", to: "8" },
-
-      // Payment chain
-      { from: "8", to: "9" },
-      { from: "9", to: "10" },
-      { from: "10", to: "11" }
+      { from: 1, to: 2 },
+      { from: 2, to: 3 },
+      { from: 3, to: 4 },
+      { from: 4, to: 5 },
+      { from: 5, to: 6, text: "No" },
+      { from: 5, to: 7, text: "Yes" },
+      { from: 6, to: 3 },
+      { from: 7, to: 8 },
+      { from: 7, to: 9 },
+      { from: 8, to: 10 },
+      { from: 9, to: 10 },
+      { from: 10, to: 11 },
+      { from: 11, to: 12 },
+      { from: 12, to: 13 },
+      { from: 13, to: 14 }
     ]
   );
+}
+window.addEventListener('DOMContentLoaded', init);
+
 </script>
 
 
