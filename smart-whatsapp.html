@@ -173,173 +173,235 @@
   </section>
 
   <!-- Conversation Flow -->
-  <section class="docs-section" id="item-1-2">
-    <h2 class="section-heading">Conversation Flow</h2>
-    <div class="container my-4">
-      <p>
-        The Smart WhatsApp chatbot guides customers through a structured conversation flow designed to replicate the ordering process in a natural chat format. The steps are:
-      </p>
-      <ul>
-        <li><strong>Greeting:</strong> The chatbot welcomes the customer and shows available menu categories.</li>
-        <li><strong>Product Selection:</strong> Customers browse menu items, choose customizations, and confirm quantity.</li>
-        <li><strong>Upselling:</strong> The chatbot suggests complementary products or promotions.</li>
-        <li><strong>Delivery or Pickup:</strong> The chatbot asks for the customer’s location (for delivery) or provides branch options (for pickup).</li>
-        <li><strong>Payment:</strong> The chatbot generates a secure payment link or confirms cash-on-delivery options.</li>
-        <li><strong>Order Tracking:</strong> Customers receive notifications such as “Order confirmed,” “In preparation,” and “Out for delivery.”</li>
-      </ul>
-      <p>
-        This conversational structure minimizes effort from the customer and makes the ordering experience faster and more intuitive than traditional methods.
-      </p>
-         <div class="text-center my-4">
-          <img src="assets/images/Smart-WhatsApp.png" alt="How it works" class="img-thumbnail shadow-sm zoom-effect" style="max-width: 350px; width: 100%;">
-        </div>
-        <div id="chatbotDiagramDiv"
-     style="width:100%; height:600px; background-color: #fff; border:1px solid #ccc;"></div>
+<section class="docs-section" id="item-1-2">
+  <h2 class="section-heading">Conversation Flow</h2>
+  <div class="container my-4">
+    <div class="row align-items-center">
+      <!-- Text Left -->
+      <div class="col-lg-7 col-md-12">
+        <p>
+          The Smart WhatsApp chatbot guides customers through a structured conversation flow designed to replicate the ordering process in a natural chat format. The steps are:
+        </p>
+        <ul>
+          <li><strong>Greeting:</strong> The chatbot welcomes the customer and shows available menu categories.</li>
+          <li><strong>Product Selection:</strong> Customers browse menu items, choose customizations, and confirm quantity.</li>
+          <li><strong>Upselling:</strong> The chatbot suggests complementary products or promotions.</li>
+          <li><strong>Delivery or Pickup:</strong> The chatbot asks for the customer’s location (for delivery) or provides branch options (for pickup).</li>
+          <li><strong>Payment:</strong> The chatbot generates a secure payment link or confirms cash-on-delivery options.</li>
+          <li><strong>Order Tracking:</strong> Customers receive notifications such as “Order confirmed,” “In preparation,” and “Out for delivery.”</li>
+        </ul>
+        <p>
+          This conversational structure minimizes effort from the customer and makes the ordering experience faster and more intuitive than traditional methods.
+        </p>
+      </div>
 
+      <!-- Image workflow -->
+      <div class="col-lg-5 col-md-12 text-center">
+        <img src="assets/images/Smart-WhatsApp.png" 
+             alt="How it works" 
+             class="img-thumbnail shadow-sm zoom-effect" 
+             style="max-width: 500px; width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+</article>
+
+
+<!-- Section 2: Ordering Through Chat -->
+<article class="docs-article" id="section-2">
+  <header class="docs-header"><h1 class="docs-heading">Ordering Through Chat</h1></header>
+
+  <!-- Initial Conversation -->
+  <section class="docs-section" id="item-2-1">
+    <h2 class="section-heading">Initial SmartWhatsApp Conversation</h2>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <!-- Text Left -->
+        <div class="col-lg-7 col-md-12">
+         <p>
+The ordering process begins when the customer initiates a conversation with the restaurant’s official WhatsApp number. 
+Upon receiving the first message, the Smart WhatsApp chatbot automatically recognizes the intent and triggers the onboarding flow. 
+It greets the user with a personalized welcome message, which can include the restaurant name, current offers, and a short introduction to the available services (e.g., “Order Delivery,” “Self Pickup,” or “Track Order”).
+</p>
+          <p>
+The chatbot leverages WhatsApp’s interactive messaging framework to present options in the form of <strong>quick reply buttons</strong> or <strong>numbered menus</strong>. 
+This approach minimizes user typing and ensures an intuitive, guided experience for all customer segments, including those less familiar with online ordering.
+</p>
+
+<p>
+Behind the scenes, the chatbot communicates with the restaurant’s <strong>POS system</strong> or <strong>menu API</strong> to fetch the latest menu categories, featured products, and promotions dynamically. 
+This ensures that every user always receives accurate data synchronized with current inventory, pricing, and seasonal offerings.
+</p>
+
+<p>
+Each incoming message from the user is processed through the <strong>chat intent parser</strong>, which validates context and maintains the state of the conversation. 
+This enables the chatbot to resume incomplete orders, recognize returning users, and continue seamlessly from where the last interaction stopped. 
+For example, if a customer previously added items but didn’t finalize payment, the chatbot can automatically ask, “Would you like to continue with your previous order?”
+</p>
+
+<p>
+The initial stage concludes once the customer selects a preferred menu category or begins browsing items. 
+This structured initiation flow reduces friction, increases engagement, and ensures consistent data exchange between the chatbot interface, WhatsApp API, and the back-end ordering engine.
+</p>
+        </div>
+        <!-- Image ask whatsapp-->
+        <div class="col-lg-5 col-md-12 text-center">
+          <img src="assets/images/smart-whatsapp-ask.png"
+               alt="smart whatsapp ask"
+               class="img-thumbnail shadow-sm zoom-effect"
+               style="max-width: 250px; width: 100%; cursor: pointer;"
+               data-bs-toggle="modal"
+               data-bs-target="#imageModal1">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selecting Items -->
+  <section class="docs-section" id="item-2-2">
+    <h2 class="section-heading">Selecting Items</h2>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <!-- Text Left -->
+        <div class="col-lg-7 col-md-12">
+          <p>
+Once the digital menu is displayed within the WhatsApp chat, customers can select items using predefined inputs such as numeric replies or button interactions. 
+Each menu item dynamically loads its details, including product name, description, base price, available sizes, add-ons, and modifier options. 
+These details are fetched directly from the integrated POS or menu management system via secured API calls, guaranteeing synchronization between in-store and digital menus.
+</p>
+
+<p>
+After a selection is made, the chatbot responds in real time with contextual prompts to refine the order. 
+For instance, it may ask: “Would you like to make it a combo?”, “Add extra cheese for 7 ?”, or “Select drink size: Small, Medium, or Large.” 
+This step leverages the <strong>upselling logic engine</strong> an internal recommendation model configured by the restaurant administrator which intelligently promotes complementary or high-margin items based on category rules and customer preferences.
+</p>
+
+<p>
+Every selected item is validated and appended to the user’s active order session, maintained through an encrypted session token linked to their WhatsApp ID. 
+The chatbot then displays the <strong>order summary</strong> showing all chosen items, quantities, and subtotal. 
+Customers can confirm, modify, or remove any item through simple commands such as “Remove donut.” 
+All changes are reflected instantly in the POS or order management database.
+</p>
+
+        </div>
+        <!-- Image cal -->
+        <div class="col-lg-5 col-md-12 text-center">
+          <img src="assets/images/smart-whatsapp-menu.png"
+               alt="smart whatsapp menu"
+               class="img-thumbnail shadow-sm zoom-effect"
+               style="max-width: 250px; width: 100%; cursor: pointer;"
+               data-bs-toggle="modal"
+               data-bs-target="#imageModal2">
+        </div>
+      </div>
+
+      <div class="row align-items-center mt-4">
+        <!-- Text Left -->
+        <div class="col-lg-7 col-md-12">
+          <p>
+At this stage, the chatbot also allows users to view <strong>nutritional facts</strong> such as calorie count, allergens, or ingredient lists (when configured in the menu data). 
+This feature improves transparency and compliance with food labeling standards, while enhancing the user experience.
+</p>
+
+<p>
+Once satisfied with their order, the customer is prompted to either continue shopping or proceed to checkout. 
+Selecting checkout transitions the flow toward the next stage choosing between <strong>Delivery</strong> and <strong>Pickup</strong> where address validation, branch availability, and payment options are processed in real time.
+</p>
+          <p>
+            Nutritional details such as calorie counts can also be displayed within the chat, ensuring transparency for customers before confirming their orders.
+          </p>
+        </div>
+        <!-- Image callory count -->
+        <div class="col-lg-5 col-md-12 text-center">
+          <img src="assets/images/smart-whatsapp-callory-count.png"
+               alt="smart whatsapp callory count"
+               class="img-thumbnail shadow-sm zoom-effect"
+               style="max-width: 250px; width: 100%; cursor: pointer;"
+               data-bs-toggle="modal"
+               data-bs-target="#imageModal1">
+        </div>
+      </div>
+
+      <div class="row align-items-center mt-4">
+        <!-- Text Left -->
+        <div class="col-lg-7 col-md-12">
+          <p>
+            The order summary is dynamically updated as users add or remove products, ensuring complete clarity before checkout.
+          </p>
+        </div>
+        <!-- Image order -->
+        <div class="col-lg-5 col-md-12 text-center">
+          <img src="assets/images/smart-whatsapp-order.png"
+               alt="smart whatsapp order"
+               class="img-thumbnail shadow-sm zoom-effect"
+               style="max-width: 250px; width: 100%; cursor: pointer;"
+               data-bs-toggle="modal"
+               data-bs-target="#imageModal2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POS & Payment Integration -->
+  <section class="docs-section" id="item-2-3">
+    <h2 class="section-heading">POS & Payment Integration</h2>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-12">
+          <ul>
+            <li>Direct POS synchronization eliminates manual data entry.</li>
+            <li>Menu, prices, and promotions are always up to date since they are pulled dynamically from the POS database.</li>
+            <li>Multiple payment gateways can be enabled (credit card, wallet, cash-on-delivery).</li>
+            <li>Payment reconciliation is automatically logged in the POS, ensuring accurate financial records.</li>
+          </ul>
+        </div>
+        <div class="col-lg-5 col-md-12 text-center">
+          <p><em>Insert img POS Integration</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bilingual Interaction -->
+  <section class="docs-section" id="item-2-4">
+    <h2 class="section-heading">Bilingual Interaction</h2>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-12">
+          <ul>
+            <li>Supports full Arabic and English workflows.</li>
+            <li>Language detection occurs at the first customer input.</li>
+            <li>All templates, product names, and instructions are localized automatically.</li>
+            <li>Customers can switch language mid-conversation using a keyword trigger.</li>
+          </ul>
+        </div>
+        <div class="col-lg-5 col-md-12 text-center">
+          <p><em>Insert img Bilingual Workflow</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Compliance -->
+  <section class="docs-section" id="item-2-5">
+    <h2 class="section-heading">Security & Compliance</h2>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-12">
+          <ul>
+            <li>End-to-end encryption through WhatsApp ensures message privacy.</li>
+            <li>Sensitive data such as payment tokens never pass through the chatbot logic directly but via secure API redirections.</li>
+            <li>Logs are anonymized to comply with data protection standards.</li>
+          </ul>
+        </div>
+        <div class="col-lg-5 col-md-12 text-center">
+          <p><em>Insert img Security Illustration</em></p>
+        </div>
+      </div>
     </div>
   </section>
 </article>
-           
-
-    <article class="docs-article" id="section-2">
-      <header class="docs-header"><h1 class="docs-heading">Features</h1></header>
-
-      <section class="docs-section" id="item-2-1">
-        <h2 class="section-heading">Real-Time Communication</h2>
-          <ul>
-           <li>All interactions occur instantly through WhatsApp.</li>
-           <li>Order confirmations, estimated preparation time, and delivery status updates are communicated without delay.</li>
-           <li>Supports proactive notifications such as “your order is ready for pickup.”</li>
-          </ul>
-        <div class="d-flex justify-content-center gap-4 mb-4">
-             
-              <div>
-               <img src="assets/images/smart-whatsapp-ask.png"
-                alt="smart whatsapp ask"
-                class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 200px; width: 100%; cursor: pointer;"
-                data-bs-toggle="modal"
-                data-bs-target="#imageModal1">
-             </div>
-             <div>
-              <img src="assets/images/smart-whatsapp-menu.png"
-                 alt="smart whatsapp menu"
-                class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 200px; width: 100%; cursor: pointer;"
-                data-bs-toggle="modal"
-                data-bs-target="#imageModal2">
-            </div>
-          </div><br>
-          <div class="d-flex justify-content-center gap-4 mb-4">
-             
-              <div>
-               <img src="assets/images/smart-whatsapp-callory-count.png"
-                alt="smart whatsapp callory count"
-                class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 200px; width: 100%; cursor: pointer;"
-                data-bs-toggle="modal"
-                data-bs-target="#imageModal1">
-             </div>
-             <div>
-              <img src="assets/images/smart-whatsapp-order.png"
-                 alt="smart whatsapp order"
-                class="img-thumbnail shadow-sm zoom-effect"
-                style="max-width: 200px; width: 100%; cursor: pointer;"
-                data-bs-toggle="modal"
-                data-bs-target="#imageModal2">
-            </div>
-          </div><br>
-      </section>
-
-      <section class="docs-section" id="item-2-2">
-        <h2 class="section-heading">POS & Payment Integration</h2>
-        <ul>
-      <li>Direct POS synchronization eliminates manual data entry.</li>
-      <li>Menu, prices, and promotions are always up to date since they are pulled dynamically from the POS database.</li>
-      <li>Multiple payment gateways can be enabled (credit card, wallet, cash-on-delivery).</li>
-      <li>Payment reconciliation is automatically logged in the POS, ensuring accurate financial records.</li>
-       </ul>        
-      </section>
-
-      <section class="docs-section" id="item-2-3">
-        <h2 class="section-heading">Bilingual Interaction</h2>
-        <ul>
-      <li>Supports full Arabic and English workflows.</li>
-      <li>Language detection occurs at the first customer input.</li>
-      <li>All templates, product names, and instructions are localized automatically.</li>
-      <li>Customers can switch language mid-conversation using a keyword trigger.</li>
-        </ul>       
-      </section>
-
-      <section class="docs-section" id="item-2-4">
-        <h2 class="section-heading">Security & Compliance</h2>
-    <ul>
-      <li>End-to-end encryption through WhatsApp ensures message privacy.</li>
-      <li>Sensitive data such as payment tokens never pass through the chatbot logic directly but via secure API redirections.</li>
-      <li>Logs are anonymized to comply with data protection standards.</li>
-    </ul>   
-      </section>
-    </article>
-
-    <article class="docs-article" id="section-3">
-      <header class="docs-header"><h1 class="docs-heading">Data & Analytics</h1></header>
-
-      <section class="docs-section" id="item-3-1">
-        <h2 class="section-heading">Customer Preferences</h2>
-      <p>Smart WhatsApp records customer interactions in an anonymized way, allowing restaurants to
-    understand what customers like most. These insights can include frequent items, order
-    frequency, and the preferred language of interaction. By analyzing these behaviors,
-    restaurants can identify top-selling products and measure customer loyalty patterns.</p>        
-      </section>
-
-      <section class="docs-section" id="item-3-2">
-        <h2 class="section-heading">Order Patterns</h2>
- <p>
-    The system includes built-in analytics dashboards that give managers visibility into
-    ordering behavior. For example:
-  </p>
-  <ul>
-    <li>Peak order hours across the day and week.</li>
-    <li>Average basket size and most frequently combined items.</li>
-    <li>Most used payment methods and their share of transactions.</li>
-    <li>Distribution between delivery, pickup, and dine-in orders.</li>
-  </ul>
-  <p>
-    This information can be exported and integrated into external BI tools for deeper analysis,
-    enabling more informed business and staffing decisions.
-  </p>       
-      </section>
-    </article>
-
-    <article class="docs-article" id="section-4">
-      <header class="docs-header"><h1 class="docs-heading">Administration</h1></header>
-
-      <section class="docs-section" id="item-4-1">
-        <h2 class="section-heading">Response Management</h2>
-  <p>Administrators have full control over dialog flows and automated replies without needing
-    development changes. The admin panel provides tools to:</p>
-  <ul>
-    <li>Edit and optimize dialog logic with minimal effort.</li>
-    <li>Add or remove product triggers and adjust templates for replies.</li>
-    <li>Manage menu updates, seasonal offers, or promotions directly from a unified dashboard.</li>
-  </ul>
-  <p>Keyword triggers (such as “help”, “offers”, or “track order”) can also be tailored to each
-    branch, giving flexibility for localized experiences.</p>   
-      </section>
-
-      <section class="docs-section" id="item-4-2">
-        <h2 class="section-heading">24/7 Support Tools</h2>
-        <p>The system is designed to never leave a customer at a dead end. In case automation fails
-    to understand the request, fallback mechanisms and monitoring tools are available:</p>
-  <ul>
-    <li>Automatic redirection to human support when needed.</li>
-    <li>Comprehensive logs and diagnostics for tracing failures.</li>
-    <li>Backup prompts to ensure customer engagement continues smoothly.</li>
-  </ul>       
-  </div>
-</div>
-      </section><!--//section-->
-			  </article><!--//docs-article-->
 
 
 
@@ -487,103 +549,6 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 </style>
-
-<script>
-  function init() {
-  const $ = go.GraphObject.make;
-
-  const chatbotDiagram = $(go.Diagram, "chatbotDiagramDiv", {
-    "undoManager.isEnabled": true,
-    layout: $(go.LayeredDigraphLayout, { direction: 90, layerSpacing: 40 })
-  });
-
-  // --- Define node templates ---
-  chatbotDiagram.nodeTemplateMap.add(
-    "Start",
-    $(go.Node, "Auto",
-      $(go.Shape, "Capsule", { fill: "#4CAF50", strokeWidth: 0 }),
-      $(go.TextBlock, "Start", { margin: 8, stroke: "white", font: "bold 12px sans-serif" },
-        new go.Binding("text", "text"))
-    )
-  );
-
-  chatbotDiagram.nodeTemplateMap.add(
-    "",
-    $(go.Node, "Auto",
-      $(go.Shape, "Rectangle", { fill: "#4d84fc", strokeWidth: 0 }),
-      $(go.TextBlock, { margin: 8, stroke: "white", font: "bold 12px sans-serif", wrap: go.Wrap.Fit, width: 160 },
-        new go.Binding("text", "text"))
-    )
-  );
-
-  chatbotDiagram.nodeTemplateMap.add(
-    "Conditional",
-    $(go.Node, "Auto",
-      $(go.Shape, "Diamond", { fill: "#ff9800", strokeWidth: 0 }),
-      $(go.TextBlock, { margin: 8, stroke: "white", font: "bold 12px sans-serif", wrap: go.Wrap.Fit, width: 160, textAlign: "center" },
-        new go.Binding("text", "text"))
-    )
-  );
-
-  chatbotDiagram.nodeTemplateMap.add(
-    "End",
-    $(go.Node, "Auto",
-      $(go.Shape, "Capsule", { fill: "#d32f2f", strokeWidth: 0 }),
-      $(go.TextBlock, "End", { margin: 8, stroke: "white", font: "bold 12px sans-serif" },
-        new go.Binding("text", "text"))
-    )
-  );
-
-  // --- Define link style ---
-  chatbotDiagram.linkTemplate = $(go.Link,
-    { routing: go.Routing.AvoidsNodes, curve: go.Curve.JumpOver, corner: 5, toShortLength: 4 },
-    $(go.Shape, { strokeWidth: 2, stroke: "#555" }),
-    $(go.Shape, { toArrow: "Standard", stroke: null, fill: "#555" })
-  );
-
-  // --- Define Smart WhatsApp Flowchart ---
-  chatbotDiagram.model = new go.GraphLinksModel(
-    [
-      { key: 1, category: "Start", text: "Customer starts WhatsApp Chat" },
-      { key: 2, text: "Chatbot greets and displays menu" },
-      { key: 3, text: "Customer browses menu & chooses item" },
-      { key: 4, text: "Chatbot suggests complementary or upselling items" },
-      { key: 5, category: "Conditional", text: "Is customer done ordering?" },
-      { key: 6, text: "Not done: continue browsing" },
-      { key: 7, text: "Done ordering: choose delivery or pickup" },
-      { key: 8, text: "Delivery" },
-      { key: 9, text: "Pickup" },
-      { key: 10, text: "Order Summary" },
-      { key: 11, text: "Secure Payment Link" },
-      { key: 12, text: "Payment Confirmation" },
-      { key: 13, text: "Order Fulfillment" },
-      { key: 14, category: "End", text: "End Process" }
-    ],
-    [
-      { from: 1, to: 2 },
-      { from: 2, to: 3 },
-      { from: 3, to: 4 },
-      { from: 4, to: 5 },
-      { from: 5, to: 6, text: "No" },
-      { from: 5, to: 7, text: "Yes" },
-      { from: 6, to: 3 },
-      { from: 7, to: 8 },
-      { from: 7, to: 9 },
-      { from: 8, to: 10 },
-      { from: 9, to: 10 },
-      { from: 10, to: 11 },
-      { from: 11, to: 12 },
-      { from: 12, to: 13 },
-      { from: 13, to: 14 }
-    ]
-  );
-}
-window.addEventListener('DOMContentLoaded', init);
-
-</script>
-
-
-
 
     <footer class="footer">
 
