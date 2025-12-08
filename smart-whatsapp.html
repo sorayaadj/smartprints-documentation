@@ -133,6 +133,11 @@
       <li class="nav-item"><a class="nav-link scrollto" href="#item-3-2">Point of Sale (POS)</a></li>
       <li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">Payment Integration</a></li>
      
+       <li class="nav-item section-title mt-3">
+        <a class="nav-link scrollto" href="#section-4">
+          <span class="theme-icon-holder me-2"><i class="fas fa-cogs"></i></span>Conclusion
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -216,9 +221,8 @@ The ordering process begins when the customer initiates a conversation with the 
 Upon receiving the first message, the Smart WhatsApp chatbot automatically recognizes the intent and triggers the onboarding flow. 
 It greets the user with a personalized welcome message, which can include the restaurant name, current offers, and a short introduction to the available services (e.g., “Order Delivery,” “Self Pickup,” or “Track Order”).
 </p>
-          <p>
-The chatbot leverages WhatsApp’s interactive messaging framework to present options in the form of <strong>quick reply buttons</strong> or <strong>numbered menus</strong>. 
-This approach minimizes user typing and ensures an intuitive, guided experience for all customer segments, including those less familiar with online ordering.
+<p>
+The chatbot leverages WhatsApp’s interactive messaging framework to  ensures an intuitive, guided experience for all customer segments, including those less familiar with online ordering.
 </p>
 
 <p>
@@ -227,9 +231,9 @@ This ensures that every user always receives accurate data synchronized with cur
 </p>
 
 <p>
-Each incoming message from the user is processed through the <strong>chat intent parser</strong>, which validates context and maintains the state of the conversation. 
+Each incoming message from the user is processed through the chat intent parser, which validates context and maintains the state of the conversation. 
 This enables the chatbot to resume incomplete orders, recognize returning users, and continue seamlessly from where the last interaction stopped. 
-For example, if a customer previously added items but didn’t finalize payment, the chatbot can automatically ask, “Would you like to continue with your previous order?”
+For example, if a customer previously added items but didn’t finalize payment, the chatbot can automatically ask, “Would you like delivery or pickup ?” to proceed with the checkout.
 </p>
 
 <p>
@@ -265,15 +269,13 @@ These details are fetched directly from the integrated POS or menu management sy
 
 <p>
 After a selection is made, the chatbot responds in real time with contextual prompts to refine the order. 
-For instance, it may ask: “Would you like to make it a combo?”, “Add extra cheese for 7 ?”, or “Select drink size: Small, Medium, or Large.” 
-This step leverages the <strong>upselling logic engine</strong> an internal recommendation model configured by the restaurant administrator which intelligently promotes complementary or high-margin items based on category rules and customer preferences.
+For instance, it may ask: “Would you like to add a drink?”, “Add extra cheese for 7 ?”, or “Select drink size: Small, Medium, or Large.” 
+This step leverages the upselling logic, an internal recommendation model configured by the restaurant administrator which intelligently promotes complementary or high-margin items based on category rules and customer preferences.
 </p>
 
 <p>
-Every selected item is validated and appended to the user’s active order session, maintained through an encrypted session token linked to their WhatsApp ID. 
-The chatbot then displays the <strong>order summary</strong> showing all chosen items, quantities, and subtotal. 
-Customers can confirm, modify, or remove any item through simple commands such as “Remove donut.” 
-All changes are reflected instantly in the POS or order management database.
+After an order is completed, the chatbot then displays the <strong>order summary</strong> showing all chosen items, quantities, and subtotal. 
+
 </p>
 
         </div>
@@ -300,18 +302,7 @@ This feature improves transparency and compliance with food labeling standards, 
 Once satisfied with their order, the customer is prompted to either continue shopping or proceed to checkout. 
 Selecting checkout transitions the flow toward the next stage choosing between <strong>Delivery</strong> and <strong>Pickup</strong> where address validation, branch availability, and payment options are processed in real time.
 </p>
-          <p>
-            Nutritional details such as calorie counts can also be displayed within the chat, ensuring transparency for customers before confirming their orders.
-          </p>
-        </div>
-        <!-- Image callory count -->
-        <div class="col-lg-5 col-md-12 text-center">
-          <img src="assets/images/smart-whatsapp-callory-count.png"
-               alt="smart whatsapp callory count"
-               class="img-thumbnail shadow-sm zoom-effect"
-               style="max-width: 250px; width: 100%; cursor: pointer;"
-               data-bs-toggle="modal"
-               data-bs-target="#imageModal1">
+         
         </div>
       </div>
       <br>
@@ -379,10 +370,15 @@ Selecting checkout transitions the flow toward the next stage choosing between <
             <li>All templates, product names, and instructions are localized automatically.</li>
             <li>Customers can switch language mid-conversation using a keyword trigger.</li>
           </ul>
-        </div>
-        <div class="col-lg-5 col-md-12 text-center">
-          <p><em>Insert img Bilingual Chat</em></p>
-        </div>
+     <div class="col-12 text-center mt-4">
+  <img id="workflowImage"
+       src="assets/images/arabic-chat-chatbot.png" 
+       alt="bilangual chat"
+       class="shadow-sm zoom-effect"
+       style="max-height: 400px; width: auto; max-width: 100%; object-fit: scale-down; background-color: transparent; border: 1px solid #ddd; border-radius: 4px;">
+  <div class="mt-2 text-muted">Bilingual Chat</div>
+</div>
+</div>
       </div>
     </div>
   </section>
@@ -438,8 +434,28 @@ Selecting checkout transitions the flow toward the next stage choosing between <
     </div>
   </section>
 
-
   </section>
+
+<!-- Section 4: Conclusion -->
+<article class="docs-article" id="section-4">
+  <header class="docs-header"><h1 class="docs-heading">Conclusion</h1></header>
+<div class="container my-4">
+
+        <p>
+          The <strong>Smart WhatsApp Ordering Chatbot</strong> redefines the way customers interact with restaurants and retail brands by merging the simplicity of WhatsApp messaging with the power of integrated digital automation. Through conversational ordering, real-time synchronization with the <strong>POS system</strong>, and secure payment integration, it delivers a seamless, familiar, and efficient experience for both customers and staff.
+        </p>
+        <p>
+          Designed to minimize manual workload while enhancing customer engagement, Smart WhatsApp automates every stage of the ordering journey, from greeting and menu browsing to checkout and fulfillment. It ensures data consistency across platforms, reduces operational errors, and allows businesses to manage high-order volumes with greater accuracy and speed.
+        </p>
+        <p>
+          As part of the Smart Retail ecosystem, this solution not only improves the customer experience but also provides valuable insights through integrated analytics and performance tracking. With multilingual support, flexible configuration, and a user-friendly interface, Smart WhatsApp is a scalable, future-ready tool that bridges the gap between communication and commerce.
+        </p>
+        <p>
+          In essence, Smart WhatsApp transforms a simple chat into a complete digital storefront,  enabling faster service, smarter operations, and stronger connections with customers anytime, anywhere.
+        </p>
+  </div>
+</section>
+
 </article>
 
 <script>
